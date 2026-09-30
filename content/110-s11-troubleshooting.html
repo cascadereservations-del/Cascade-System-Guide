@@ -1,0 +1,258 @@
+<!--
+id: s11-troubleshooting
+title: When something goes wrong
+audience: both
+roles: all
+order: 110
+icon: lifering
+summary: Steps to follow by symptom and by alert card, and who to ask.
+-->
+<p class="lead">Most problems have a simple next step. Pick what you see. The guide tells you what to do. If it is about servers, keys or an app that will not open, the answer is always the same: <strong>tell Lloyd</strong>.</p>
+<aside class="callout tip"><p>Take a screenshot before you ask for help. Write the time and what you were doing. This saves a lot of questions.</p></aside>
+
+<h3 id="s11-flow">How an alert reaches you</h3>
+<p>The system checks things all day. When something is wrong, it posts a card in Telegram. The first line shows the colour and the subject. The last line starts with <strong>Do:</strong> and tells you the one thing to do.</p>
+<!-- admin -->
+<figure class="diagram">
+<!-- include: diagrams/alert-flow.svg -->
+<figcaption>From a check, to a card, to a person, to a fix.</figcaption>
+</figure>
+<!-- /admin -->
+
+<h3 id="s11-symptom">By symptom: what is wrong?</h3>
+<div class="dtree" id="s11-dt-symptom">
+  <div class="dt-node" data-node="start">
+    <p class="dt-q">What is wrong?</p>
+    <button type="button" data-go="submit">The Cleaner app will not submit</button>
+    <button type="button" data-go="photo">A photo will not upload</button>
+    <button type="button" data-go="power">The power is out</button>
+    <button type="button" data-go="door">A guest cannot get in</button>
+    <button type="button" data-go="notmapped">A Telegram button says my account is not mapped</button>
+    <button type="button" data-go="cassy">Cassy did not answer</button>
+  </div>
+
+  <div class="dt-node" data-node="submit">
+    <p><strong>The Cleaner app will not submit.</strong></p>
+    <ol class="steps">
+      <li>Read the warnings on the Submit screen. They say what is missing, such as an issue note, a photo that did not upload, or the timer.</li>
+      <li>Check the list: at least 5 photos before cleaning, at least 2 kitchen photos, the <span class="term" data-term="supply-log">supply log</span> saved, every <span class="term" data-term="confirm-and-leave">Confirm and Leave</span> item shown (four or more, depending on the cleaning type), and at least 5 photos after cleaning.</li>
+      <li>Check your signal. The app does not try again by itself. When the signal is back, tap <strong>Submit Now</strong> once and wait.</li>
+      <li>Do not clear your browser data. Your draft is saved. If the app asks, tap <strong>Resume</strong>.</li>
+      <li>Still stuck after two tries? Take a screenshot and tell Lloyd. The app also sends him an error card by itself.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="photo">
+    <p><strong>A photo will not upload.</strong></p>
+    <ol class="steps">
+      <li>Check your signal. Move to a place with better signal, or use Wi-Fi.</li>
+      <li>Keep the app open until the photo finishes. Do not switch to another app.</li>
+      <li>Take the photo again. A photo that failed shows a warning on the Submit screen.</li>
+      <li>If the camera does not open, check in your phone settings that your browser may use the camera. Then reload the app.</li>
+      <li>Cannot get a meter photo at all? The app allows a <span class="term" data-term="meter-skip">meter skip</span> only now and then. If it does not allow it, take the photo. Tell Marifel what happened.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="power">
+    <p><strong>The power is out.</strong></p>
+    <ol class="steps">
+      <li>Look in the OPS group for a <span class="term" data-term="brownout">brownout</span> card or notice. If there is one, the cut is planned and nothing is broken.</li>
+      <li>Planned cut: keep the emergency light close. The <span class="term" data-term="ecoflow">EcoFlow</span> should have been charged the day before.</li>
+      <li>No notice? Post in the OPS group what you see and the time. Tell Lloyd. The system does not warn about cuts that were not planned.</li>
+      <li>A guest is in the unit? Tell Marifel so she can write to the guest.</li>
+    </ol>
+    <p>More steps for the unit are in <a href="#s5-power-safety">Power and safety</a>.</p>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="door">
+    <p><strong>A guest cannot get in.</strong></p>
+    <ol class="steps">
+      <li>Tell Marifel or Lloyd right away. The host must act now. A red <strong>ALERT</strong> card about guest access appears in Telegram.</li>
+      <li>Do not give out a door code yourself. Each guest gets a new code, and only the host sends it.</li>
+      <li>Ask the guest for the booking name and the check-in date. The host checks who they are before helping.</li>
+      <li>If anyone is in danger, tell them to call 911.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="notmapped">
+    <p><strong>A Telegram button says your account is not mapped.</strong></p>
+    <p>The system does not know your Telegram account yet, so it will not let you use that button. Nothing was changed. The card stays open for someone who is <span class="term" data-term="mapped-staff">mapped</span>.</p>
+    <ol class="steps">
+      <li>Do not tap the button again.</li>
+      <li>Ask a mapped person to tap it. Lloyd can.</li>
+      <li>Ask Lloyd to map your account if you need these buttons.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="cassy">
+    <p class="dt-q">Who was waiting for Cassy?</p>
+    <button type="button" data-go="cassy-staff">I asked her in Telegram</button>
+    <button type="button" data-go="cassy-guest">A guest wrote on Messenger</button>
+  </div>
+
+  <div class="dt-node" data-node="cassy-staff">
+    <p><strong>Cassy did not answer in Telegram.</strong></p>
+    <ol class="steps">
+      <li>Start your message with her name, like <strong>Cassy, who arrives this week?</strong> Or type <strong>/cassy</strong> and your question. She ignores messages that are not for her.</li>
+      <li>Ask in the Finance group or the OPS group. She does not answer in other chats.</li>
+      <li>If she says she could not reach the model, wait one minute and ask again.</li>
+      <li>Spending questions: she cannot read spending. In the Finance group, type <strong>/summary</strong>. In the OPS group she never shows money.</li>
+      <li>Still nothing after a few minutes? Tell Lloyd.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="cassy-guest">
+    <p><strong>A guest wrote on Messenger and got no answer.</strong></p>
+    <ol class="steps">
+      <li>Open the Facebook Page inbox and answer the guest yourself. Or look for a guest card in the OPS group and use <strong>Send option 1</strong>, <strong>Send option 2</strong> or <strong>Write my own</strong>.</li>
+      <li>If a person typed a reply in the Page inbox, Cassy stays quiet on that chat for 2 hours. This is normal.</li>
+      <li>A guest who cannot get in, or who feels unsafe, causes a red ALERT card. A person must answer at once. See <a href="#s10-guests-messenger">Guests and Messenger</a>.</li>
+      <li>Many guests with no answer? Tell Lloyd right away.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+</div>
+
+<h3 id="s11-alert">By alert card: what did you get?</h3>
+<div class="dtree" id="s11-dt-alert">
+  <div class="dt-node" data-node="start">
+    <p class="dt-q">What does the first line of the card say?</p>
+    <button type="button" data-go="red">A red ALERT</button>
+    <button type="button" data-go="yellow">A yellow ATTENTION</button>
+    <button type="button" data-go="missed">Missed cleaning</button>
+    <button type="button" data-go="unresolved">Turnover unresolved</button>
+    <button type="button" data-go="rain">Rain warning</button>
+    <button type="button" data-go="brownout">Brownout</button>
+    <button type="button" data-go="meter">Meter photo flagged</button>
+    <button type="button" data-go="receipt">Receipt waiting</button>
+    <button type="button" data-go="hold">Hold expired</button>
+<!-- admin -->
+    <button type="button" data-go="stopped">A scheduled job has stopped</button>
+<!-- /admin -->
+  </div>
+
+  <div class="dt-node" data-node="red">
+    <p><strong>🔴 ALERT.</strong> Something needs a person now.</p>
+    <ol class="steps">
+      <li>Read the words after the dot. They name the problem.</li>
+      <li>Read the <strong>Do:</strong> line at the bottom of the card. It is the one thing to do.</li>
+      <li>Do it. If it is not your job, tell Marifel or Lloyd at once.</li>
+<!-- admin -->
+      <li>Some cards have <strong>🙈 Known, stop reminding</strong>. Leave it to Lloyd or the owner. It stops the reminders for that problem.</li>
+<!-- /admin -->
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="yellow">
+    <p><strong>🟡 ATTENTION.</strong> Worth a look today. It is not an emergency.</p>
+    <ol class="steps">
+      <li>One card can hold up to five points. The last line may say more are in the dashboard.</li>
+      <li>Read each point and the <strong>Do:</strong> line.</li>
+      <li>Do what is yours. Pass the rest to Marifel or Lloyd.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="missed">
+    <p><strong>🔴 ALERT · missed cleaning.</strong> A check-out in the last 14 days has no cleaning report.</p>
+    <ol class="steps">
+      <li>Find out if the clean was done. Ask the cleaner.</li>
+      <li>If it was done, send the report in the Cleaner app. Use the <span class="term" data-term="stay-picker">stay picker</span> to choose the right stay. The alert closes by itself.</li>
+      <li>If it was not done, tell Marifel at once.</li>
+      <li>The system sends a reminder on day 3. From day 4 it becomes a task in the dashboard and sends no more cards.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="unresolved">
+    <p><strong>🔴 ALERT · turnover unresolved.</strong> A check-out from 2 or more days ago is still open. This card comes once.</p>
+    <ol class="steps">
+      <li>Tell Marifel. Find out what is missing: the clean, the report, or the photos.</li>
+      <li>Fix it before the next guest arrives.</li>
+      <li>After this card, the problem stays as a task in the dashboard.</li>
+    </ol>
+    <p>A yellow <strong>turnover check</strong> card in the Finance group means the report exists but has a problem. It can be no meter reading, fewer than 5 photos, or an unfinished checklist. Marifel follows it up.</p>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="rain">
+    <p><strong>🟡 ATTENTION · rain warning.</strong> A guest arrives or leaves today and rain is likely in the next few hours.</p>
+    <ol class="steps">
+      <li>Put an umbrella and a towel at the entrance.</li>
+      <li>Marifel warns the arriving guest.</li>
+      <li>Make sure the cleaner knows.</li>
+    </ol>
+    <p>You get this card once a day at most.</p>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="brownout">
+    <p><strong>🟡 ATTENTION · brownout.</strong> The power company plans a power cut. The card gives the day and the hours.</p>
+    <ol class="steps">
+      <li>Charge the <span class="term" data-term="ecoflow">EcoFlow</span> the day before.</li>
+      <li>Keep the emergency light ready.</li>
+      <li>Guests are told only if they ask.</li>
+    </ol>
+    <p>This card covers planned cuts only. If the power goes out and no card was posted, post in the OPS group and tell Lloyd.</p>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="meter">
+    <p><strong>🚩 Meter photo flagged.</strong> The card says the photo is not a meter, does not match the number typed, or could not be read.</p>
+    <ol class="steps">
+      <li>Cleaner: at your next sign-in the app asks you for a new meter photo. Take it clearly, with the numbers in view.</li>
+      <li>Office: look at the photo before paying the cleaner.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="receipt">
+    <p><strong>🟡 ATTENTION · receipt waiting.</strong> A guest's payment receipt has waited 2 to 3 hours in the Finance group.</p>
+    <ol class="steps">
+      <li>Scroll up to the receipt card.</li>
+      <li>Check that the money is really in the account. Do not trust the screenshot alone.</li>
+      <li>Tap <strong>Confirm booking</strong> or <strong>Decline</strong>. Only <span class="term" data-term="mapped-staff">mapped staff</span> can. <span class="badge danger">Cannot undo in Telegram</span></li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+  <div class="dt-node" data-node="hold">
+    <p><strong>🟡 ATTENTION · hold expired.</strong> A guest did not pay within 24 hours. The dates are free again.</p>
+    <ol class="steps">
+      <li>Tap <strong>Show as text</strong> to get the ready message for the guest. Copy it and send it yourself.</li>
+      <li>If the guest paid another way, ask Lloyd to bring the hold back from the dashboard.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+
+<!-- admin -->
+  <div class="dt-node" data-node="stopped">
+    <p><strong>⚠️ A scheduled job has stopped.</strong> An automatic job did not run on time.</p>
+    <ol class="steps">
+      <li>Tell Lloyd. This one is technical and is his to fix.</li>
+      <li>There is nothing else for you to do. Lloyd checks the last error of the job.</li>
+    </ol>
+    <button type="button" data-go="start">Start again</button>
+  </div>
+<!-- /admin -->
+</div>
+
+<h3 id="s11-who">Who to ask</h3>
+<table>
+  <thead><tr><th>Ask</th><th>About</th></tr></thead>
+  <tbody>
+    <tr><td>Marifel</td><td>Guests and bookings. Payments and receipts. Messenger. Telegram Finance questions. Cleaning days.</td></tr>
+    <tr><td>Honey</td><td>How to do a clean. Where things go in the unit.</td></tr>
+    <tr><td>Lloyd</td><td>An app that will not open or sign in. A forgotten PIN. A button that says not mapped. Any error or alert about the system, servers or keys.</td></tr>
+    <tr><td>The owner</td><td>Prices, staff matters and big decisions.</td></tr>
+    <tr><td>911</td><td>Anyone in danger. Call first, then tell the team.</td></tr>
+  </tbody>
+</table>
+<p>Numbers are not written in this guide. Use the numbers your team already shares with you.</p>

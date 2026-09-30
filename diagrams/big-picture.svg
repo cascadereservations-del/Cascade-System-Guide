@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 396" role="img" aria-labelledby="bp-title bp-desc">
+<title id="bp-title">The big picture</title>
+<desc id="bp-desc">Three guest-facing tools and five staff tools all read and write one shared booking and records database.</desc>
+<defs><marker id="bp-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--text-muted)"/></marker></defs>
+<text x="12" y="20.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-muted)">GUEST SIDE</text>
+<rect x="12" y="30" width="108" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--info);stroke-width:2"/>
+<text x="66" y="52.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Booking</text>
+<text x="66" y="69.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">site</text>
+<rect x="128" y="30" width="108" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--info);stroke-width:2"/>
+<text x="182" y="52.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Guest</text>
+<text x="182" y="69.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">guide</text>
+<rect x="244" y="30" width="108" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--info);stroke-width:2"/>
+<text x="298" y="52.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Messenger</text>
+<text x="298" y="69.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">concierge</text>
+<path d="M66 82V100M182 82V100M298 82V100M66 100H298M182 100V118" fill="none" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="118" width="336" height="69" rx="8" style="fill:var(--surface);stroke:var(--bronze);stroke-width:3"/>
+<text x="180" y="140.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Booking and records database</text>
+<text x="180" y="157.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="middle" style="fill:var(--text)">One shared place for bookings,</text>
+<text x="180" y="174.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="middle" style="fill:var(--text)">guests, cleanings and money.</text>
+<text x="12" y="212.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-muted)">STAFF SIDE</text>
+<path d="M180 187V222M70 222H350M70 222V242M180 222V242M290 222V242M350 222V314M95 314H350M95 314V334M255 314V334" fill="none" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="20" y="242" width="100" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="70" y="264.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Operations</text>
+<text x="70" y="281.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Manual</text>
+<rect x="130" y="242" width="100" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="180" y="264.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Cleaner</text>
+<text x="180" y="281.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">app</text>
+<rect x="240" y="242" width="100" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="290" y="264.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Admin</text>
+<text x="290" y="281.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">dashboard</text>
+<rect x="20" y="334" width="150" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="95" y="356.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Telegram groups</text>
+<text x="95" y="373.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="middle" style="fill:var(--text)">Finance and OPS</text>
+<rect x="180" y="334" width="150" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="255" y="356.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Cassy</text>
+<text x="255" y="373.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="middle" style="fill:var(--text)">The assistant</text>
+</svg>

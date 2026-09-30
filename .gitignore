@@ -1,0 +1,7 @@
+research/
+node_modules/
+*.log
+test/out*/
+.claude/
+private/
+admin-locktest/

@@ -1,0 +1,132 @@
+{
+  "balance": {
+    "term": "Balance",
+    "def": "The rest of the stay cost after the reservation fee. The guest pays it, with the security deposit, at least one day before check-in."
+  },
+  "brownout": {
+    "term": "Brownout",
+    "def": "A planned power cut announced by the power company. The team charges the EcoFlow the day before and keeps the emergency light ready."
+  },
+  "cassy": {
+    "term": "Cassy",
+    "def": "The digital assistant of Cascade Hideaway. She answers guests on Messenger and helps staff in Telegram. From Telegram she never sends anything to a guest."
+  },
+  "concierge": {
+    "term": "Concierge",
+    "def": "The guest side of Cassy on Messenger. She answers questions and takes bookings, and she passes anything difficult to the host."
+  },
+  "confirm-and-leave": {
+    "term": "Confirm and Leave",
+    "def": "The last checks in Phase 4 of the Cleaner app: door lock, power and water, meter readings, and the utensil set. The utensil set is asked only on a turnover or a deep clean."
+  },
+  "deep-clean": {
+    "term": "Deep clean",
+    "def": "A longer, fuller clean of the unit that is done now and then, not after every guest. It has its own choice in the Cleaner app."
+  },
+  "deposit": {
+    "term": "Deposit",
+    "def": "The PHP 1,000 refundable security deposit on a direct booking. It is paid with the balance and is returned after the check-out inspection finds no problem. Airbnb bookings carry no cash deposit."
+  },
+  "digest": {
+    "term": "Digest",
+    "def": "The short morning card the system posts in the OPS group at 08:00. It lists arrivals, departures and anything that needs care that day. On a quiet day it stays silent."
+  },
+  "draft": {
+    "term": "Draft",
+    "def": "A reply that Cassy suggests for a guest message. A draft is only text for you to copy. Nothing is sent to the guest until a person sends it."
+  },
+  "dwell-time": {
+    "term": "Dwell time",
+    "def": "The waiting time for cleaning products to work on a surface. The Cleaner app has a timer for it in Phase 2, from 5 to 20 minutes."
+  },
+  "ecoflow": {
+    "term": "EcoFlow",
+    "def": "A battery power station that stays in the unit. It keeps the important things running during a power cut. It is house equipment, not something a guest can borrow."
+  },
+  "finance-group": {
+    "term": "Finance group",
+    "def": "The Telegram group for Lloyd and Marifel. Money cards, payment receipts and expense entries appear here."
+  },
+  "handoff": {
+    "term": "Handoff",
+    "def": "A guest request that Cassy cannot settle alone, so she passes it to the host. It appears as a card in the OPS group until someone answers it."
+  },
+  "heartbeat": {
+    "term": "Heartbeat",
+    "def": "The small sign that each automatic job leaves after it runs. If a heartbeat is missing for too long, the system posts a card saying a scheduled job has stopped.",
+    "admin": true
+  },
+  "hold": {
+    "term": "Hold",
+    "def": "The dates kept for a guest for 24 hours while the guest sends the reservation fee. If nothing is paid in that time, the hold is released and the guest owes nothing."
+  },
+  "inquiry": {
+    "term": "Inquiry",
+    "def": "A direct booking request from the booking site or Messenger that is not confirmed yet. It becomes a booking when the payment is checked and confirmed."
+  },
+  "ledger": {
+    "term": "Ledger",
+    "def": "The official record of money in and money out. Confirmed expenses and income are written here."
+  },
+  "mapped-staff": {
+    "term": "Mapped staff",
+    "def": "A person whose Telegram account is linked to a staff profile. Some buttons, such as Confirm booking, work only for mapped staff. If a button says your account is not mapped, ask Lloyd."
+  },
+  "meter-skip": {
+    "term": "Meter skip",
+    "def": "The Cleaner app lets you skip a meter photo now and then, but never two in a row. If the app will not let you skip, take the photo."
+  },
+  "mid-stay": {
+    "term": "Mid-stay clean",
+    "def": "A clean during a guest's stay, not after check-out. It has its own choice in the Cleaner app."
+  },
+  "notice": {
+    "term": "Notice",
+    "def": "A dated item on the operations board, such as a brownout, a holiday, an event or a reminder. Notices appear in the morning digest."
+  },
+  "ops-group": {
+    "term": "OPS group",
+    "def": "The Telegram group for the whole team, including cleaners. It carries alerts, cleaning reports and guest hand-offs. It never shows money."
+  },
+  "promo": {
+    "term": "Promo",
+    "def": "A temporary discount on the nightly price. It is set on the Pricing page of the dashboard and ends on a date."
+  },
+  "rate-card": {
+    "term": "Rate card",
+    "def": "The one stored list of nightly prices. The booking site and Cassy both read it, so a price is changed in one place only."
+  },
+  "reservation-fee": {
+    "term": "Reservation fee",
+    "def": "50 percent of the stay, paid to secure the dates once the payment is checked. It is fully refunded when the guest cancels 5 or more days before check-in."
+  },
+  "stay-picker": {
+    "term": "Stay picker",
+    "def": "The list in Phase 0 of the Cleaner app where you choose which guest stay this cleaning belongs to."
+  },
+  "supply-log": {
+    "term": "Supply log",
+    "def": "The pop-up in Phase 3 of the Cleaner app where you record the supplies you used. You must save it before you can go on to Phase 4."
+  },
+  "turnover": {
+    "term": "Turnover",
+    "def": "The full clean of the unit after a guest checks out, to get it ready for the next guest."
+  },
+  "verifier": {
+    "term": "Verifier",
+    "def": "The automatic system check. It looks every hour for problems such as two stays on the same nights, and posts a card only when something is wrong.",
+    "admin": true
+  },
+  "work-order": {
+    "term": "Work order",
+    "def": "A repair or fix task. An urgent note from a cleaner becomes a work order, and it is closed in the dashboard when the job is done."
+  },
+  "system-of-record": {
+    "term": "System of record",
+    "def": "The database behind the dashboard. It is the official record of bookings, guests, cleaning reports, stock and money. Cards and e-mails are only messages about it."
+  },
+  "receipt": {
+    "term": "Receipt",
+    "def": "The screenshot or photo that proves a payment. A guest sends it to confirm a booking, and staff post receipt photos of purchases in the Finance group."
+  }
+}

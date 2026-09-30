@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 100" role="img" aria-label="Sample flow: guest to owner" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="30" width="110" height="40" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong)"/>
+<text x="65" y="55" text-anchor="middle" style="fill:var(--text);font-size:14px">Guest</text>
+<path d="M120 50h60" style="stroke:var(--bronze);stroke-width:2;fill:none"/>
+<rect x="180" y="30" width="110" height="40" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong)"/>
+<text x="235" y="55" text-anchor="middle" style="fill:var(--text);font-size:14px">Cassy</text>
+<path d="M290 50h50" style="stroke:var(--bronze);stroke-width:2;fill:none"/>
+<circle cx="360" cy="50" r="20" style="fill:var(--accent)"/>
+</svg>

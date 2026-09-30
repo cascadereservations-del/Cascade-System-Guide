@@ -1,0 +1,200 @@
+<!--
+id: s7-booking-flow
+title: A booking from start to finish
+audience: both
+roles: office
+order: 70
+icon: calendar
+summary: What the guest does on the booking site, what the office does with the payment, and every message the system sends until the thank-you.
+-->
+<p class="lead">A direct booking has two halves. The guest asks for the dates and sends proof of payment. Then the office checks the money and confirms. After that the system sends the guest their messages by itself, except the door code, which you send.</p>
+
+<figure class="diagram">
+<!-- include: diagrams/booking-flow.svg -->
+<figcaption>One direct booking, from the guest&#39;s request to the thank-you message.</figcaption>
+</figure>
+
+<div class="task-finder">
+  <a class="task" href="#s7-office" data-roles="office"><strong>A receipt arrived</strong><span>Confirm booking or Decline</span></a>
+  <a class="task" href="#s7-hold" data-roles="office"><strong>A hold expired</strong><span>Unpaid after 24 hours</span></a>
+  <a class="task" href="#s7-door-code" data-roles="office"><strong>Send the door code</strong><span>A new code for every guest</span></a>
+  <a class="task" href="#s7-airbnb" data-roles="office"><strong>An Airbnb booking</strong><span>Nothing to type</span></a>
+</div>
+
+<h3 id="s7-guest-side">Part 1: What the guest does on the booking site</h3>
+<p>The guest uses the public booking site. You can walk through the same screens on your own phone. Do not send a real request to test it.</p>
+
+<div class="walkthrough" id="s7-wt-guest">
+  <div class="wt-step" data-title="1. Pick the dates">
+    <img src="img/site/hero.webp" alt="The booking site top of page with a Check-in and Check-out bar and a Check dates button">
+    <p>At the top of the page the guest taps <strong>Check-in</strong> and <strong>Check-out</strong> and chooses dates on the small calendar. Then they tap <strong>Check dates</strong>. The page shows if the dates are free. The calendar is the live calendar, so taken nights cannot be picked.</p>
+    <p>The stay is 1 night or more. Longer stays get a discount that shows as the guest picks dates: 5% from 2 nights, 10% from 7 nights, 25% from 28 nights.</p>
+  </div>
+  <div class="wt-step" data-title="2. Step 1: Dates &amp; Details">
+    <img src="img/site/booking-form.webp" alt="Booking form step 1 with name, contact number, e-mail and number of guests">
+    <p>The guest fills in <strong>Full Name</strong>, <strong>Contact Number</strong> (Phone or WhatsApp), <strong>Email Address</strong> and <strong>Guests</strong> (1 to 3 adults). There is an optional <strong>Special Requests</strong> box for early check-in, a child, or an occasion. All the other boxes are required.</p>
+    <p>Then they tap <strong>Review price &amp; payment</strong>.</p>
+  </div>
+  <div class="wt-step" data-title="3. Step 2: Review &amp; Pay">
+    <img src="img/site/payment.webp" alt="Booking form step 2 showing the price breakdown, the Reserve 50 percent and Pay in Full choice and the payment methods">
+    <p>The guest sees the price, then chooses how much to pay now:</p>
+    <ul>
+      <li><strong>Reserve (50%)</strong> holds the dates now. It is a <span class="term" data-term="reservation-fee">reservation fee</span> of half the total. It is offered only when check-in is 5 days away or more.</li>
+      <li><strong>Pay in Full</strong> pays everything. When check-in is less than 5 days away, this is the only choice. There is no 50% reservation.</li>
+    </ul>
+    <p>They then pick <strong>Bank Transfer</strong> or <strong>GCash</strong>. The page shows the payment details and buttons to copy the account number and the amount.</p>
+  </div>
+  <div class="wt-step" data-title="4. Attach the receipt">
+    <p>The guest sends the money in their own banking app, then taps <strong>Tap to upload</strong> under <strong>Attach Your Payment Screenshot</strong>. It accepts JPG, PNG or PDF up to 5 MB. Then they tap <strong>Submit reservation request</strong>. (After a late-booking notice, the button reads <strong>I&#39;ve sent the payment</strong>.)</p>
+  </div>
+  <div class="wt-step" data-title="5. The success message">
+    <p>A box says <strong>Reservation request received</strong>, with a reference such as <strong>DIR-SAMPLE</strong>. It says the dates are <strong>not confirmed</strong> until a personal confirmation arrives. It also says the balance and the deposit are collected at least a day before check-in.</p>
+  </div>
+</div>
+
+<h4 id="s7-money">What the guest pays, and when</h4>
+<table>
+  <thead><tr><th>Amount</th><th>When</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><span class="term" data-term="reservation-fee">Reservation fee</span> (50% of the total)</td><td>With the request</td><td>The guest can pay the full amount instead. When check-in is less than 5 days away, only full payment is offered. The fee is refunded when the guest cancels 5 or more days before check-in. Under 5 days, it is kept.</td></tr>
+    <tr><td><span class="term" data-term="balance">Balance</span> (the other 50%)</td><td>At least one day before check-in</td><td>Collected together with the deposit.</td></tr>
+    <tr><td><span class="term" data-term="deposit">Security deposit</span>: PHP 1,000</td><td>At least one day before check-in, with the balance</td><td>Returned after the check-out check finds no problem.</td></tr>
+  </tbody>
+</table>
+<p>Check-in is at 2:00 PM. Check-out is at 12:00 noon. The booking site is always the source for these words. See <a href="#s12-policies-glossary">Policies and glossary</a>.</p>
+
+<h3 id="s7-office">Part 2: What the office does</h3>
+<p>When the guest submits, two cards appear in the <span class="term" data-term="finance-group">Finance group</span> in Telegram. The first says a request came in and the dates are on hold. The second, a few moments later, holds the receipt photo.</p>
+
+<div class="tg-card" data-group="Finance">
+  <div class="tg-text">🏠 NEW BOOKING · Direct DIR-SAMPLE · HOLD<br>Sample Guest · guest@example.com · 0917 000 0000<br>2 nights · 2 guests · dates held for 24 hours<br>Do: wait for the receipt card, then tap Confirm there.</div>
+  <div class="tg-buttons">
+    <button type="button" class="tg-btn" data-who="Anyone in the group">💰 Log expense</button>
+    <button type="button" class="tg-btn" data-who="Anyone in the group">🧾 Records</button>
+  </div>
+  <div class="tg-result">Opens the list of expense categories so you can log an expense. It has nothing to do with this booking.</div>
+  <div class="tg-result">Opens the purchases page in the dashboard. Nothing changes.</div>
+</div>
+
+<div class="tg-card" data-group="Finance">
+  <div class="tg-text">🧾 FINANCE · receipt DIR-SAMPLE<br>Sample Guest · GCash · read by the system: PHP 1,500 · confidence high<br>Do: check the money is really in the GCash or bank app, then tap Confirm booking or Decline.</div>
+  <div class="tg-buttons">
+    <button type="button" class="tg-btn" data-who="Mapped staff" data-danger="Confirms the booking and sends the guest a message. There is no Undo in Telegram.">✅ Confirm booking</button>
+    <button type="button" class="tg-btn" data-who="Mapped staff" data-danger="Cancels the request and tells the guest. There is no Undo in Telegram.">❌ Decline</button>
+  </div>
+  <div class="tg-result">The booking is confirmed. The calendar is updated, the guest is e-mailed, the confirmation message is sent, and the OPS group gets a card that says CONFIRMED. If someone else already decided, you see Already reviewed. If the dates were taken in the meantime, you see NOT confirmed.</div>
+  <div class="tg-result">The request is cancelled. The money row is voided and a guest who wrote in Messenger is told. The dates are freed.</div>
+</div>
+
+<h4 id="s7-confirm-steps">Confirm or decline a payment</h4>
+<ol class="steps">
+  <li>Open the receipt card in the Finance group.</li>
+  <li>Read what the system read from the photo: amount, channel, reference. Read any warning such as <em>SHORT</em>.</li>
+  <li>Open your GCash or bank app. Check the money is really there. The photo alone is not proof.</li>
+  <li>Tap <strong>Confirm booking</strong> if the money is there. Tap <strong>Decline</strong> if it is not.</li>
+  <li>Read the answer on the card.</li>
+</ol>
+<aside class="callout danger"><p><span class="badge danger">Posts money at once</span> Neither button has an Undo. Only staff whose Telegram is linked to a staff login can tap them. If you see <em>your Telegram account is not mapped to a staff profile</em>, the buttons stay for someone else. Ask the owner to link your account, or use the dashboard route below.</p></aside>
+
+<h4 id="s7-dashboard-route">The same job in the dashboard</h4>
+<p>You can decide the same booking in the dashboard instead. Use it when you are at a computer or the Telegram tap is refused.</p>
+<ol class="steps">
+  <li>Open <strong>Finance</strong> &gt; <strong>Review queue</strong>. Find the payment under <strong>Payment evidence comparisons</strong>.</li>
+  <li>Type a <strong>Reason</strong>. Tap <strong>Approve</strong> (or <strong>Reject</strong>).</li>
+  <li>Open <strong>Bookings</strong> &gt; <strong>Inquiries</strong>. Tap <strong>Confirm</strong> (or <strong>Decline</strong>) on the card, then <strong>Confirm</strong> in the window.</li>
+  <li>Read the message <em>Confirmed</em> and the guest name.</li>
+</ol>
+<aside class="callout note"><p>In the dashboard, <strong>Decline</strong> does not message the guest. Write to them in Messenger. Tapping <strong>Decline</strong> on the Telegram card does tell a Messenger guest. Details of every dashboard button are in <a href="#s6-inquiries">Inquiries</a>.</p></aside>
+
+<h4 id="s7-late-receipt">A receipt that is late</h4>
+<p>If a receipt sits for 2 to 3 hours with nobody deciding, one more card appears: <strong>ATTENTION · receipt waiting</strong>. It says: scroll up to the receipt card and tap <strong>Confirm booking</strong> or <strong>Decline</strong>. It is posted once.</p>
+
+<h3 id="s7-hold">Holds: 24 hours to pay</h3>
+<p>A <span class="term" data-term="hold">hold</span> keeps the dates for the guest while you check the payment. If the guest has not paid 24 hours after asking, the system releases the hold by itself. It runs every hour. It frees the calendar dates, voids the money row, and posts this card.</p>
+<div class="tg-card" data-group="Finance">
+  <div class="tg-text">🟡 ATTENTION · hold expired DIR-SAMPLE<br>Sample Guest · no payment in 24 hours. The dates are free again.<br>📨 Hello Sample Guest, we have not received your payment yet, so we released the dates. If you still want to stay, tell us and we will check them again.</div>
+  <div class="tg-buttons">
+    <button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+    <button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+  </div>
+  <div class="tg-result">Posts the message alone in a box. Press and hold it to copy. It copies nothing by itself and sends nothing to the guest.</div>
+  <div class="tg-result">Asks Cassy to write a warmer or shorter version. She only replies with a draft. Nothing is sent to the guest.</div>
+</div>
+<aside class="callout tip"><p>If a guest tells you they paid another way after the hold expired, tell the owner. The owner restores the booking. Do not make a second booking for the same dates.</p></aside>
+
+<h3 id="s7-cancel">If a guest cancels</h3>
+<ul>
+  <li>Use <strong>Cancel booking</strong> on the booking page in the dashboard. See <a href="#s6-booking-detail">Booking detail</a>. The guest gets a message from the system and the dates are freed.</li>
+  <li>No refund is made by that button. The owner or Marifel handles a refund by hand. The rule: 5 or more days before check-in the reservation fee is refunded. Under 5 days it is kept.</li>
+  <li>Airbnb bookings follow Airbnb&#39;s own cancellation rules.</li>
+</ul>
+
+<h3 id="s7-airbnb">Airbnb bookings</h3>
+<p>Airbnb bookings need <strong>no typing</strong>. Two things bring them in: the system reads the e-mails Airbnb sends, and it copies the Airbnb calendar every 15 minutes.</p>
+<table>
+  <thead><tr><th>Card you may see</th><th>Group</th><th>What it means</th></tr></thead>
+  <tbody>
+    <tr><td>🏠 NEW BOOKING · Airbnb <em>code</em></td><td>OPS and Finance</td><td>A new Airbnb stay. For a returning guest it shows their history and a welcome-back text.</td></tr>
+    <tr><td>🧾 FINANCE · Airbnb payout</td><td>Finance</td><td>Airbnb paid out. Shows the total.</td></tr>
+    <tr><td>🟡 ATTENTION · cancelled <em>code</em></td><td>OPS</td><td>The stay was cancelled. The dates are open again.</td></tr>
+    <tr><td>🟡 ATTENTION · blocked date</td><td>Finance</td><td>Airbnb shows a block with no booking behind it. Tap <strong>Maintenance or owner use</strong>, <strong>A direct booking - I will add it</strong> or <strong>Unblock it on Airbnb</strong>. The last one only records what you want. You still unblock on Airbnb yourself.</td></tr>
+  </tbody>
+</table>
+<aside class="callout note"><p>Airbnb bookings get no messages from this system. Message those guests in Airbnb as usual.</p></aside>
+
+<h3 id="s7-messages">Messages the system sends by itself</h3>
+<p>After you confirm a direct booking, the system sends these messages. All times are Manila time. Each message goes out once per booking. It goes on Messenger if the guest wrote to the page in the last 23 hours, otherwise by e-mail. If it cannot send, the card in the OPS group says so, and you send it yourself.</p>
+<table>
+  <thead><tr><th>Message</th><th>When it goes</th><th>What it says, in plain words</th></tr></thead>
+  <tbody>
+    <tr><td>1. Confirmation</td><td>Right after you confirm. If you confirmed in the dashboard, at the next hourly run.</td><td>Your stay is confirmed.</td></tr>
+    <tr><td>2. Arrival details and balance</td><td>2 days before check-in, between 15:00 and 21:00. Skipped if the booking was confirmed less than 2 days before check-in.</td><td>How to arrive, and the balance and deposit due.</td></tr>
+    <tr><td>3. Door code</td><td><strong>Never sent by the system.</strong> A card comes to Finance when the guest ID is on file and check-in is today to 7 days away.</td><td>You send it. See below.</td></tr>
+    <tr><td>4. Mid-stay refresh</td><td>Stays of 5 nights or more, about day 4 of the stay (day 3 for 5 or 6 nights), between 15:00 and 21:00.</td><td>A check-in on how the stay is going.</td></tr>
+    <tr><td>5.1 Check-out reminder</td><td>Check-out day, between 09:00 and 12:00.</td><td>Check-out is at 12:00 noon.</td></tr>
+    <tr><td>5.2 Thank-you and reviews</td><td>Check-out day, between 16:00 and 22:00. Held back if the guest made a complaint or a safety report, or a work order is open.</td><td>Thank you, and how to leave a review.</td></tr>
+  </tbody>
+</table>
+<p>Every message also posts a card in the <span class="term" data-term="ops-group">OPS group</span> so staff can see it. Tap <strong>Show as text</strong> to see the exact words. <strong>Revise</strong> asks Cassy for a different version. If a complaint is open, the card says: not sent, please write personally. Then write to the guest yourself.</p>
+
+<h3 id="s7-door-code">The door code</h3>
+<aside class="callout danger"><p>Every guest gets a <strong>new</strong> door code. The system never sends it and never knows it. You set the code in the lock app and send it to the guest yourself. This guide never shows a code. Never write one in a group chat.</p></aside>
+<div class="tg-card" data-group="Finance">
+  <div class="tg-text">🔑 DOOR CODE READY TO SEND · DIR-SAMPLE<br>Sample Guest · check-in soon · ID on file<br>Deposit and balance: received (sample)<br>📨 Hello Sample Guest, your door code for your stay is [door code]. Please keep it private.</div>
+  <div class="tg-buttons">
+    <button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+  </div>
+  <div class="tg-result">Posts the message alone in a box. It has a marked spot where the code goes. Copy the text, type the new code into the marked spot, then send it to the guest yourself. Nothing is sent by the button.</div>
+</div>
+<ol class="steps">
+  <li>Wait for the <strong>DOOR CODE READY TO SEND</strong> card.</li>
+  <li>Check the card says the deposit and balance are received. If it shows a warning, ask the owner before you go on.</li>
+  <li>Set a new code for this guest in the lock app.</li>
+  <li>Tap <strong>Show as text</strong>. Copy the text. Put the new code in the marked spot.</li>
+  <li>Send it to the guest yourself, on Messenger or by e-mail.</li>
+</ol>
+<p>Cleaners do not need this. If a guest cannot get in, see <a href="#s10-handoff">When a guest is handed to the host</a>.</p>
+
+<h3 id="s7-timeline">One booking from request to thank-you</h3>
+<ol class="timeline">
+  <li data-time="Day 0" data-group="Finance"><strong>Request.</strong> The guest submits the form. The dates are held for 24 hours. A NEW BOOKING card arrives.</li>
+  <li data-time="Day 0" data-group="Finance"><strong>Receipt.</strong> The receipt card arrives. You check the money and tap <strong>Confirm booking</strong>.</li>
+  <li data-time="Day 0" data-group="OPS"><strong>Confirmation.</strong> The guest gets message 1. The OPS group sees a CONFIRMED card.</li>
+  <li data-time="2 days before" data-group="OPS"><strong>Arrival details.</strong> Message 2 goes out between 15:00 and 21:00.</li>
+  <li data-time="Up to 7 days before" data-group="Finance"><strong>Door code card.</strong> Once the ID is on file. You set a new code and send it.</li>
+  <li data-time="Day before" data-group="Finance"><strong>Balance and deposit.</strong> The guest pays the balance and the PHP 1,000 deposit. The door code card shows if they were received.</li>
+  <li data-time="Check-in 14:00" data-group="OPS"><strong>Stay begins.</strong> The morning card in OPS lists the arrival.</li>
+  <li data-time="Mid-stay" data-group="OPS"><strong>Refresh.</strong> Message 4, for stays of 5 nights or more.</li>
+  <li data-time="09:00-12:00" data-group="OPS"><strong>Check-out reminder.</strong> Message 5.1.</li>
+  <li data-time="16:00-22:00" data-group="OPS"><strong>Thank-you.</strong> Message 5.2 with the review links, unless a complaint is open.</li>
+</ol>
+
+<h3 id="s7-ready">Check yourself</h3>
+<ul class="checklist" id="s7-ready-list">
+  <li><label><input type="checkbox"> I can say what the guest does in step 1 and step 2 on the booking site.</label></li>
+  <li><label><input type="checkbox"> I check the money is really there before I tap Confirm booking.</label></li>
+  <li><label><input type="checkbox"> I know a hold ends after 24 hours without payment.</label></li>
+  <li><label><input type="checkbox"> I know the system never sends the door code, and every guest gets a new one.</label></li>
+  <li><label><input type="checkbox"> I know Airbnb bookings need no typing.</label></li>
+</ul>
+<p>Next: <a href="#s10-guests-messenger">Guests and Messenger</a>.</p>

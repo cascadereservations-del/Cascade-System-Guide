@@ -1,0 +1,197 @@
+<!--
+id: s9-cassy
+title: Cassy - your assistant in Telegram
+audience: both
+roles: all
+order: 90
+icon: robot
+summary: How to ask Cassy, what she can read, what she refuses, and how she drafts guest replies.
+-->
+<p class="lead"><span class="term" data-term="cassy">Cassy</span> is the team's assistant inside Telegram. You ask her a question and she looks it up. She helps you draft replies. She never sends anything to a guest, and she never changes anything until a person taps a button.</p>
+
+<aside class="callout note"><p>Cassy also answers guests on Messenger. That is a different job. The two share a voice, not a job. This chapter is about the Cassy you talk to in the Telegram groups. For the guest side, see <a href="#s10-guests-messenger">Guests on Messenger</a>.</p></aside>
+
+<h3 id="s9-where">Where she works and how to ask</h3>
+<table>
+<thead><tr><th>Where</th><th>What she can do there</th></tr></thead>
+<tbody>
+<tr><td><span class="term" data-term="finance-group">Finance group</span></td><td>Bookings, guests, stock and money figures. She can also raise an expense card<!-- admin --> and a house-fact card<!-- /admin -->.</td></tr>
+<tr><td><span class="term" data-term="ops-group">OPS group</span></td><td>The same, but money is removed from everything she reads. She never shows amounts, payouts, revenue, cost, price, fee or balance here.</td></tr>
+<tr><td>A private chat</td><td>Only for a few approved accounts. It works like the Finance group. Any other chat gets nothing.</td></tr>
+</tbody>
+</table>
+<p>Ask her in any of these ways:</p>
+<ol class="steps">
+<li>Start your message with her name: <strong>Cassy, who arrives this week?</strong> The words <strong>cassy</strong> or <strong>@cassy</strong> both work.</li>
+<li>Or type <strong>/cassy</strong> and your question.<!-- admin --> For a harder question type <strong>/deep</strong> and your question.<!-- /admin --></li>
+<li>Or tap <strong>Ask Cassy</strong> (or <strong>Cassy</strong>) in the menu, then reply to the bot's message with your question.</li>
+<li>Or mention the bot, or reply to one of its messages.</li>
+</ol>
+<aside class="callout tip"><p>Cassy ignores chat that is not for her. You do not need to worry about talking to each other in the group.</p></aside>
+<ul>
+<li>She answers in the language you used: English, Tagalog, Bisaya or Taglish.</li>
+<li>Her answers have a fixed shape: one decision line, at most five short lines, one <strong>Do:</strong> action<!-- admin -->, then the name of the model she used<!-- /admin -->.</li>
+<li>She remembers only the last few turns of the chat. A short follow-up like "and next week?" works. A long thread does not. Ask a full question if she seems lost.</li>
+<!-- admin -->
+<li><strong>/deep</strong> has a small daily limit. Past the limit she says so and answers on the normal model.</li>
+<!-- /admin -->
+</ul>
+
+<h3 id="s9-tools">What she can look up</h3>
+<p>These are all her read tools. She answers only from what a tool returns. If a tool has no data she says so. She does not guess.</p>
+<table>
+<thead><tr><th>She can look up</th><th>Example question</th></tr></thead>
+<tbody>
+<tr><td>Arrivals, departures and guests in the house between two dates. Also the first free night, worked out by code.</td><td><strong>Cassy, who arrives this week?</strong> / <strong>when is the unit next free?</strong></td></tr>
+<tr><td>Nights sold, nights available, occupancy and room revenue for a date range (default: this month so far).</td><td><strong>occupancy this month?</strong></td></tr>
+<tr><td>Items at or below their reorder point, most urgent first.</td><td><strong>what is low in stock?</strong></td></tr>
+<tr><td>Every consumable with its quantity and days of cover.</td><td><strong>how many days of towels are left?</strong></td></tr>
+<tr><td>What we know about one guest: stays, last issue the cleaner logged, preferences, notes, open follow-ups.</td><td><strong>tell me about Sample Guest</strong></td></tr>
+<tr><td>Every past and upcoming stay of one guest.</td><td><strong>when did Sample Guest stay with us?</strong></td></tr>
+<tr><td>House how-tos: aircon, TV, Wi-Fi, door and key card, EcoFlow, outages, emergencies, check-out, turnover steps, supplier contacts. Staff see every level of fact.</td><td><strong>cassy house wifi</strong> / <strong>how do I reset the water heater?</strong></td></tr>
+</tbody>
+</table>
+<aside class="callout warn"><p>Cassy cannot read the <span class="term" data-term="ledger">ledger</span>, expenses, cleaning reports, meter readings, receipts or payouts.<!-- admin --> Her own help card says she reads "the ledger". That is not true.<!-- /admin --> She can tell you revenue and occupancy, but not what was spent. For spending, use <strong>/summary</strong> in the Finance group.</p></aside>
+
+<h3 id="s9-writes">What she can start, and what needs your tap</h3>
+<p>She can prepare a few things. Each one only posts a card. Nothing is saved until a person taps a button on that card.</p>
+<ul>
+<li><strong>Log an expense.</strong> Finance only. When a Finance message says money was spent with an amount, she raises a confirm card.</li>
+<li><strong>Save a notice</strong> (brownout, holiday, event, reminder). OPS and Finance.</li>
+<!-- admin -->
+<li><strong>Teach a house fact.</strong> Finance only. See below.</li>
+<!-- /admin -->
+</ul>
+
+<h3 id="s9-refuses">What she refuses or will not do</h3>
+<ul>
+<li>She never sends anything to a guest. Drafts are for you to copy. Each draft ends with "Nothing was sent."</li>
+<li>She answers only from what her tools return. If a tool fails she says "I could not read" that thing and stops. She does not ask for access.</li>
+<li>In OPS she never sees money. She also refuses to log an expense<!-- admin --> or teach a fact<!-- /admin --> there. She says this can only be done in the Finance group.</li>
+<li>She never says a card was sent when none was.</li>
+<li>She cannot void or edit an expense, confirm or cancel a booking, refund a guest, change rates or open the door.</li>
+<!-- admin -->
+<li>She will not save a door code, a payment number or a login as a house fact. If she is unsure who may see a fact, she picks the narrowest level.</li>
+<!-- /admin -->
+<li>If the AI service is down she says "I could not reach the model. Try again in a minute."</li>
+</ul>
+
+<h3 id="s9-examples">Examples of good questions</h3>
+<p>Short, clear questions work best. Here is what a good exchange looks like. The left side is you. The right side is Cassy. The names, numbers and house details in these examples are made up.</p>
+<div class="msg-thread">
+<p class="msg guest">Cassy, who arrives this week?</p>
+<p class="msg bot">Two arrivals this week. Sample Guest checks in on Friday for 3 nights. One more arrives on Sunday.<br>Do: check the ID is on file before Friday.</p>
+</div>
+<div class="msg-thread">
+<p class="msg guest">what is low in stock?</p>
+<p class="msg bot">Two items are at or below their reorder point. Bath towels are the most urgent.<br>- Bath towels: 4 left<br>- Trash bags: 6 left<br>Do: add both to the next shopping list.</p>
+</div>
+<div class="msg-thread">
+<p class="msg guest">cassy house aircon</p>
+<p class="msg bot">The aircon remote is in the drawer under the TV. Set it to 24 degrees and close the doors while it runs.<br>Do: tell the guest where the remote is.</p>
+</div>
+<div class="msg-thread">
+<p class="msg guest">what did we spend on cleaning supplies this month?</p>
+<p class="msg bot">I cannot read expenses, so I cannot answer that.<br>Do: send /summary in the Finance group.</p>
+</div>
+
+<h3 id="s9-wt-heading">Walkthrough - draft a reply to a guest</h3>
+<p>Use this when a guest wrote to the Facebook Page inbox or the Airbnb app and you want a good reply fast.</p>
+<div class="walkthrough" id="s9-wt-draft">
+<div class="wt-step" data-title="Start the draft">
+<p>Pick one of these:</p>
+<ol class="steps">
+<li>Type <strong>/draft</strong> and paste what the guest wrote.</li>
+<li>Or type <strong>cassy reply:</strong> and paste the guest's message.</li>
+<li>Or tap <strong>Guest reply</strong> and reply with the pasted text or a screenshot of the chat.</li>
+<li>Or send a screenshot with the caption <strong>cassy draft</strong>.</li>
+</ol>
+<p>You can add <strong>guest: Sample Guest</strong> to name the guest. Then Cassy also looks at their history.</p>
+</div>
+<div class="wt-step" data-title="What she does">
+<p>From a screenshot she reads the chat, works out if it is Messenger or Airbnb, finds the guest's name, and takes the guest's newest messages after your last line.</p>
+<p>For Messenger she asks the guest assistant to answer with no sending. The draft then uses the real calendar, the rate card and the house voice. If she cannot reach that assistant you still get a draft, marked "the concierge could not be reached, so dates are not checked". For Airbnb she drafts separately. She never adds links, phone numbers, e-mail or payment outside Airbnb.</p>
+</div>
+<div class="wt-step" data-title="Read the risk flag">
+<p>She checks what kind of message it is. If it is anything but routine, the header shows a line starting with a warning sign. Follow the rule of thumb:</p>
+<ul>
+<li>Payment claim - check Finance first.</li>
+<li>Refund - use the 5-day rule and do not promise money.</li>
+<li>Cancellation or date change - check the calendar.</li>
+<li>Complaint - think about calling the guest.</li>
+<li>Safety - call the guest now.</li>
+<li>Access problem - check who they are first.</li>
+<li>Policy exception - it is your decision.</li>
+</ul>
+</div>
+<div class="wt-step" data-title="Read the draft">
+<div class="msg-thread">
+<p class="msg bot">✍️ Guest reply · Sample Guest · Messenger · availability<br>⚠️ The draft claims availability: check the calendar before sending.<br>Nothing was sent. Long-press an option to copy it.</p>
+<p class="msg bot">Hello Sample Guest, thank you for asking. Those dates look open on our calendar. Would you like us to hold them for you?</p>
+</div>
+<p>Option 1 is in its own message. Option 2, a shorter one, appears only when option 1 is long. Notes may say "the concierge would attach the GCash QR here: send it with the reply".</p>
+</div>
+<div class="wt-step" data-title="Copy it and send it yourself">
+<p>Long-press the option to copy it. Paste it into the Facebook Page inbox or the Airbnb app and send it there. There is no send button on a draft. It is never sent automatically.</p>
+<aside class="callout tip"><p>Want it warmer or shorter? Tap <strong>Revise</strong> on a card, or type <strong>revise:</strong> and your text. Cassy returns a "Revised draft". Nothing is sent.</p></aside>
+</div>
+</div>
+
+<!-- admin -->
+<h3 id="s9-house-facts">Teach, edit or retire a house fact</h3>
+<p>A house fact is a how-to that Cassy and the guest assistant both use, like how the aircon works. Only the Finance group can change facts.</p>
+<ol class="steps">
+<li>Type <strong>cassy teach:</strong> and the fact. To change one, type <strong>cassy edit aircon:</strong> and the new text. To switch one off, type <strong>cassy retire aircon</strong>.</li>
+<li>Cassy rewrites it in the house voice: calm, two to five sentences, "we", no exclamation marks. She picks a short topic name, a level and some keywords in English and Tagalog or Bisaya. If the topic name already exists, she edits that fact.</li>
+<li>She posts a card. Read it. It shows the new text, the old text and the keywords. A "Voice check" line warns you if the wording breaks house tone. It is a warning. It does not block.</li>
+<li>Tap <strong>Save it</strong> to save, or <strong>Cancel</strong> to drop it.</li>
+</ol>
+<p>The level decides who may be told the fact:</p>
+<ul>
+<li><strong>public</strong> - anyone on Messenger.</li>
+<li><strong>guest</strong> - only a guest whose stay was checked with their check-in date and the first letter of the booking name.</li>
+<li><strong>staff</strong> - Telegram only.</li>
+</ul>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📘 Save "Aircon" (guest, topic aircon)?<br>New: The remote is in the drawer under the TV. Please set it to 24 degrees and close the doors.<br>Was: (nothing yet)<br>Keywords: aircon, remote, aircon remote<br>Voice check: no problems found.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Finance group or a mapped owner or admin">✅ Save it</button>
+<button type="button" class="tg-btn" data-who="Finance group or a mapped owner or admin">❌ Cancel</button>
+</div>
+<div class="tg-result">The fact is saved. Cassy and the guest assistant use it within 10 minutes. To change it, teach it again. To switch it off, use a retire card. <span class="badge undo">Can undo</span></div>
+<div class="tg-result">Nothing is saved. The card closes.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📘 Retire "Aircon" (topic aircon)?<br>Cassy will stop using this fact.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Finance group or a mapped owner or admin">✅ Save it</button>
+<button type="button" class="tg-btn" data-who="Finance group or a mapped owner or admin">❌ Cancel</button>
+</div>
+<div class="tg-result">The fact is switched off within 10 minutes. Teach it again if you need it back. <span class="badge undo">Can undo</span></div>
+<div class="tg-result">Nothing changes.</div>
+</div>
+<aside class="callout warn"><p>Never teach Cassy a door code, a payment number or a login. She will refuse. The Wi-Fi password and the on-ground phone number are kept in one place and filled in automatically, so they are not stored a second time.</p></aside>
+<aside class="callout tip"><p>Not sure what to teach? The Monday <span class="term" data-term="digest">digest</span> in the Finance group lists questions guests asked that Cassy could not answer. Each line ends with a "cassy teach:" hint.</p></aside>
+<!-- /admin -->
+
+<h3 id="s9-brownouts">Brownout notices</h3>
+<p>A <span class="term" data-term="brownout">brownout</span> is a planned power cut. There are four ways it gets onto the board. All four end the same way: it shows in <strong>/notices</strong>, in the 08:00 <span class="term" data-term="digest">digest</span> ("Prepare for the brownout ...") and in Cassy's answers.</p>
+<table>
+<thead><tr><th>How</th><th>Who</th><th>Does it ask first?</th></tr></thead>
+<tbody>
+<tr><td>Type <strong>/brownout tomorrow 8am 4h</strong> and a title</td><td>Anyone in OPS or Finance</td><td>No. It saves at once.</td></tr>
+<tr><td>Type <strong>cassy schedule a brownout tomorrow 8am for 4 hours</strong></td><td>OPS or Finance</td><td>Yes. Cassy posts a confirm card. A brownout without a start time is refused.</td></tr>
+<tr><td>Send a photo of the power company poster and tap <strong>Scan advisory</strong></td><td>OPS or Finance</td><td>Yes. A result card lists each time window. You tap to save.</td></tr>
+<tr><td>Automatic</td><td>The system watches the power company's posts</td><td>No. It posts a card in OPS and writes the notice.</td></tr>
+</tbody>
+</table>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">⚡ Save brownout on 2026-10-03 at 08:00 for 4h - Power maintenance?</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Save it</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">The notice is written to the board. It shows in the next digest. There is no Telegram button to remove it. Ask in the dashboard. <span class="badge danger">Saves at once</span></div>
+<div class="tg-result">Nothing is saved.</div>
+</div>
+<aside class="callout tip"><p>When a brownout is on the board, charge the EcoFlow and keep the emergency light ready. Guests are told only if they ask. If a card is confusing, see <a href="#s11-troubleshooting">Troubleshooting</a>.</p></aside>

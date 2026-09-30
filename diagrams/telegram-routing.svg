@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 561" role="img" aria-labelledby="tr-title tr-desc">
+<title id="tr-title">Where a Telegram message goes</title>
+<desc id="tr-desc">One bot serves two groups. Taps and commands are answered by the expense handler, Cassy questions go to Cassy, and replies to guest cards go to the Messenger concierge.</desc>
+<defs><marker id="tr-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--text-muted)"/></marker></defs>
+<rect x="12" y="10" width="164" height="88" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="24" y="32.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Finance group</text>
+<text x="24" y="49.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Lloyd and Marifel.</text>
+<text x="24" y="66.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Money lives here.</text>
+<rect x="184" y="10" width="164" height="88" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="196" y="32.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">OPS group</text>
+<text x="196" y="49.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Staff and cleaners</text>
+<text x="196" y="66.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Never any money.</text>
+<path d="M94 98V112M266 98V112M94 112H266M180 112V132" fill="none" style="stroke:var(--text-muted);stroke-width:2"/>
+<path d="M180 118V132" fill="none" marker-end="url(#tr-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="134" width="336" height="69" rx="8" style="fill:var(--surface);stroke:var(--bronze);stroke-width:3"/>
+<text x="24" y="156.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">One bot reads everything</text>
+<text x="24" y="173.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Taps, commands and messages</text>
+<text x="24" y="190.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">from both groups</text>
+<rect x="44" y="219" width="304" height="69" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="241.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Taps and commands</text>
+<text x="56" y="258.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">The expense handler answers</text>
+<text x="56" y="275.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">them itself.</text>
+<path d="M24 253.5H42" fill="none" marker-end="url(#tr-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="44" y="304" width="304" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="326.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Questions for Cassy</text>
+<text x="56" y="343.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Passed to Cassy.</text>
+<path d="M24 330H42" fill="none" marker-end="url(#tr-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="44" y="372" width="304" height="86" rx="8" style="fill:var(--surface-raised);stroke:var(--info);stroke-width:2"/>
+<text x="56" y="394.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Replies to #CH- guest cards</text>
+<text x="56" y="411.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Passed to the Messenger</text>
+<text x="56" y="428.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">concierge, which sends it to</text>
+<text x="56" y="445.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">the guest.</text>
+<path d="M24 415H42" fill="none" marker-end="url(#tr-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<path d="M24 203V415" fill="none" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="482" width="336" height="69" rx="8" style="fill:var(--surface-raised);stroke:var(--danger);stroke-width:2"/>
+<text x="24" y="504.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">OPS never carries money</text>
+<text x="24" y="521.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Money words are blocked from</text>
+<text x="24" y="538.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">anything posted to OPS.</text>
+</svg>

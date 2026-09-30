@@ -1,0 +1,5 @@
+{
+  "turnover": { "term": "Turnover", "def": "The clean and reset of the unit between one guest leaving and the next arriving." },
+  "cassy": { "term": "Cassy", "def": "The automatic assistant that answers guests on Messenger." },
+  "handoff": { "term": "Handoff", "def": "When a message goes from the assistant to a person." }
+}

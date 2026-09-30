@@ -1,0 +1,75 @@
+<!--
+id: s4-turnover
+title: Doing a turnover with the Cleaner app
+audience: both
+roles: cleaner
+order: 40
+icon: broom
+summary: Phase 0 to 4 in the Cleaner app, step by step.
+-->
+<p class="lead">A <span class="term" data-term="turnover">turnover</span> has five phases. Do them in order.</p>
+
+<h3 id="s4-before">Before you start</h3>
+<ol class="steps">
+<li>Open the Cleaner app.</li>
+<li>Tap <strong>Sign in</strong> with your name.</li>
+<li>Tap <strong>Phase 0</strong>.</li>
+</ol>
+
+<h3 id="s4-phases">The phases</h3>
+<div class="walkthrough" id="s4-wt-turnover">
+<div class="wt-step" data-title="Phase 0 - Set up">
+<img src="img/cleaner/phase-0.webp" alt="The Phase 0 screen of the Cleaner app">
+<p>Check the unit is empty. Take the first photos.</p>
+</div>
+<div class="wt-step" data-title="Phase 1 - Clean">
+<p>Work room by room. Tick each job.</p>
+</div>
+<div class="wt-step" data-title="Phase 2 - Reset">
+<p>Make the bed. Put out fresh towels.</p>
+</div>
+</div>
+
+<h3 id="s4-screen">The screen</h3>
+<figure class="annotated">
+<img src="img/cleaner/phase-0.webp" alt="Phase 0 with numbered points">
+<span class="hotspot" data-x="20" data-y="30" data-title="Photo button" data-who="Cleaner" data-undo="yes">Takes a photo of the room.</span>
+<span class="hotspot" data-x="" data-y="" data-title="Next phase" data-who="Cleaner" data-undo="no">Moves to the next phase.</span>
+<figcaption>The second point has no pin yet, only a legend line.</figcaption>
+</figure>
+
+<h3 id="s4-alerts">Messages from the bot</h3>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🟡 ATTENTION · meter photo waiting<br>Sample Guest · CH-SAMPLE</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Mapped staff" data-danger="Confirms at once. There is no second question.">Confirm photo</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Ask again</button>
+</div>
+<div class="tg-result">The photo is saved and the reminder stops.</div>
+<div class="tg-result">The bot asks the cleaner for a new photo.</div>
+</div>
+
+<h3 id="s4-stuck">I am stuck</h3>
+<div class="dtree" id="s4-dt-stuck">
+<div class="dt-node" data-node="start"><p class="dt-q">What is wrong?</p>
+<button type="button" data-go="app">The app will not open</button>
+<button type="button" data-go="photo">A photo will not upload</button></div>
+<div class="dt-node" data-node="app"><p>Close the app and open it again. If it still fails, call the owner.</p></div>
+<div class="dt-node" data-node="photo"><p>Check your signal. Try once more. Keep the phone still.</p></div>
+</div>
+
+<h3 id="s4-tools">What to bring</h3>
+<table>
+<thead><tr><th>Item</th><th>Where</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Cloths</td><td>Store room</td><td>Use a fresh set for each unit.</td></tr>
+<tr><td>Spray</td><td>Store room</td><td>Read the label first.</td></tr>
+</tbody>
+</table>
+
+<figure class="diagram">
+<!-- include: diagrams/sample.svg -->
+<figcaption>A sample diagram: a message goes from the guest to Cassy.</figcaption>
+</figure>
+
+<p>Back to the <a href="#s0-welcome">welcome</a> chapter, or an <a href="https://cascadereservations-del.github.io/Cascade-Manual/">outside page</a>.</p>

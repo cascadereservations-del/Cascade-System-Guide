@@ -1,0 +1,644 @@
+<!--
+id: s8-telegram
+title: Telegram - the two groups, the buttons and the cards
+audience: both
+roles: all
+order: 80
+icon: telegram
+summary: Which group is for what, who may tap what, every command, and a tap-through replica of every card the bot sends.
+-->
+<p class="lead">Cascade talks to its team in Telegram. One bot posts cards in two groups. A card tells you what happened and the one thing to do. This chapter shows every card and every button, so you know what a tap does before you tap it.</p>
+
+<!-- admin -->
+<figure class="diagram">
+<!-- include: diagrams/telegram-routing.svg -->
+<figcaption>Everything typed or tapped in either group goes to one bot. The bot answers commands and taps itself, and passes questions for Cassy to Cassy.</figcaption>
+</figure>
+<!-- /admin -->
+
+<h3 id="s8-groups">The two groups</h3>
+<p>The bot knows the two groups apart and ignores every other chat. Use the right group for the right job.</p>
+<table>
+<thead><tr><th></th><th><span class="term" data-term="finance-group">Finance group</span></th><th><span class="term" data-term="ops-group">OPS group</span></th></tr></thead>
+<tbody>
+<tr><th>What it is for</th><td>Money and approvals</td><td>Staff and cleaners</td></tr>
+<tr><th>Who is in it</th><td>The owner and Marifel</td><td>Office staff and cleaners</td></tr>
+<tr><th>Money on cards</th><td>Yes. Amounts, payouts, fees, refunds.</td><td>Never. Money words are kept out of this group.</td></tr>
+<tr><th>Typical cards</th><td>Booking receipts, expenses, receipts, payouts, overdue payments</td><td>Daily <span class="term" data-term="digest">digest</span>, cleaning reports, guest messages, rain and power alerts</td></tr>
+<tr><th>Menu buttons</th><td>Log Expense, Cleaning Fees, Reports, OPS Notices, Inventory, Cassy</td><td>Brownout, Calendar, Weather now, Turnover, Stock check, Full inventory, Ask Cassy, Draft a reply, View all notices</td></tr>
+</tbody>
+</table>
+<aside class="callout note"><p>If you are unsure which group to use, use OPS for anything about the house, the guests or the cleaning. Anything about money goes in Finance.</p></aside>
+
+<h3 id="s8-who-taps">Who may tap what</h3>
+<p>There are three levels. The bot checks the level when you tap.</p>
+<ol class="steps">
+<li><strong>Anyone in the group.</strong> Expense confirm and cancel, receipt confirm, edit and discard, mark a cleaning fee paid, save a notice, menu buttons, <strong>Show as text</strong>, <strong>Revise</strong>, save a brownout. There is no identity check.</li>
+<li><strong>Mapped staff only.</strong> <strong>Confirm booking</strong> and <strong>Decline</strong>, <strong>Apply</strong> on a stock count,<!-- admin --> <strong>Known, stop reminding</strong>,<!-- /admin --> and the answers on a blocked-date card. <span class="term" data-term="mapped-staff">Mapped staff</span> means your Telegram account is linked to your staff profile.</li>
+<!-- admin -->
+<li><strong>Finance group, or a mapped owner or admin.</strong> <strong>Save it</strong> on a house-fact card from Cassy.</li>
+<!-- /admin -->
+</ol>
+<aside class="callout tip"><p>If a button answers that your Telegram account is not mapped to a staff profile, nothing was changed. Ask Lloyd to map your account. The buttons stay on the card for someone who is mapped.</p></aside>
+<aside class="callout note"><p>If you log or confirm something by mistake, tell Lloyd. Telegram has no Undo button for money.</p></aside>
+
+<h3 id="s8-commands-both">Commands that work in both groups</h3>
+<p>A command starts with <strong>/</strong>. You can also tap the same action from the menu.</p>
+<table>
+<thead><tr><th>Command</th><th>What it does</th><th>Changes anything?</th></tr></thead>
+<tbody>
+<tr><td><strong>/menu</strong> (also /help, /start)</td><td>Opens the button menu for the group you are in.</td><td>No</td></tr>
+<tr><td><strong>/keyboard</strong> (also /buttons)</td><td>Adds a permanent button grid above the message box. Use the small keyboard symbol to show or hide it.</td><td>No</td></tr>
+<tr><td><strong>/stock</strong></td><td>Low-stock list. <strong>/stock all</strong> shows everything. Finance also sees unit cost.</td><td>No</td></tr>
+<tr><td><strong>/inventory</strong></td><td>Full stock report, low items first.</td><td>No</td></tr>
+<tr><td><strong>/notices</strong></td><td>The next 15 active notices: brownouts, holidays, events, reminders.</td><td>No</td></tr>
+<tr><td><strong>/brownout</strong>, <strong>/holiday</strong>, <strong>/event</strong>, <strong>/reminder</strong></td><td>Adds a notice to the board. Optional date word (today, tomorrow, 2026-10-03, 10-03). A brownout also takes a start time (8am, 13:30) and hours (4h). The rest is the title.</td><td><span class="badge danger">Saves at once</span> No confirm card on this route.</td></tr>
+<tr><td><strong>/count</strong></td><td>Finance: starts a stock count. OPS: only says counts are updated from Finance.</td><td>Nothing saved until <strong>Apply</strong></td></tr>
+<tr><td><strong>/cassy</strong> question</td><td>Same as writing "Cassy, ..." See <a href="#s9-cassy">Cassy</a>.</td><td>No</td></tr>
+<tr><td><strong>/draft</strong> guest message</td><td>A suggested reply for you to copy. It never sends anything to a guest.</td><td>No</td></tr>
+<!-- admin -->
+<tr><td><strong>/deep</strong> question</td><td>Cassy on the stronger model. There is a small daily limit. After the limit she says so and answers normally.</td><td>Uses one deep answer</td></tr>
+<!-- /admin -->
+</tbody>
+</table>
+<p>Examples: <strong>/brownout tomorrow 8am 4h power maintenance</strong>, <strong>/holiday 06-12 Independence Day</strong>, <strong>/reminder tomorrow Pay Honey</strong>.</p>
+
+<h3 id="s8-commands-finance">Commands that work only in the Finance group</h3>
+<table>
+<thead><tr><th>Command</th><th>What it does</th><th>Changes anything?</th></tr></thead>
+<tbody>
+<tr><td><strong>/log</strong></td><td>Guided expense. Pick a category, then type the amount and the shop, like <strong>1706 Lazada</strong>.</td><td>Writes to the <span class="term" data-term="ledger">ledger</span> after a duplicate check and a large-amount check</td></tr>
+<tr><td>Fast entry (no slash)</td><td>A message that starts with a number is booked as an expense. <strong>250 supplies Puregold</strong>.</td><td>Writes to the ledger, or asks first if it looks like a duplicate or is PHP 10,000 or more</td></tr>
+<tr><td><strong>/purchase</strong></td><td>Only reminds you to send the receipt photo.</td><td>No</td></tr>
+<tr><td><strong>/payclean</strong></td><td>Lists up to 10 cleans not yet paid. Tap one, confirm or edit the amount.</td><td><span class="badge danger">Posts money</span> Writes the cleaner fee to the ledger</td></tr>
+<tr><td><strong>/manualclean</strong></td><td>For a clean that is not in the system. Reply with cleaner, date, amount: <strong>Honey, 05-28, 500</strong>.</td><td>Writes a cleaning record and a ledger expense</td></tr>
+<tr><td><strong>/notifyclean</strong></td><td>Posts one "Cleaning Fees Settled" card per cleaner to OPS.</td><td>Posts to OPS</td></tr>
+<tr><td><strong>/summary</strong></td><td>This month: income, expenses, net, top five expense categories, receipts waiting.</td><td>No</td></tr>
+<tr><td><strong>/status</strong></td><td>Receipts waiting, unpaid cleans, low stock, next check-out, last calendar sync.</td><td>No</td></tr>
+<!-- admin -->
+<tr><td><strong>/datahealth</strong></td><td>Compares finished Airbnb stays with the earnings file: matched, amount differs, payout missing, extra rows.</td><td>No</td></tr>
+<!-- /admin -->
+<!-- admin -->
+<tr><td><strong>/refund</strong> code amount name | reference | note</td><td>Shows a "Refund Confirmation" card. Add <strong>rc</strong> at the very end if it goes through Airbnb's Resolution Center.</td><td>Nothing until <strong>Confirm Refund</strong></td></tr>
+<!-- /admin -->
+<!-- admin -->
+<tr><td><strong>/void</strong> code</td><td>Voids a ledger row by its 8-character ref, shown when it was logged.</td><td><span class="badge danger">Acts at once</span> No confirm. You cannot undo it from Telegram.</td></tr>
+<!-- /admin -->
+<!-- admin -->
+<tr><td><strong>/ping</strong></td><td>A technical check of the bot. Lloyd only.</td><td>One small AI call</td></tr>
+<!-- /admin -->
+<!-- admin -->
+<tr><td>Send an Airbnb .csv file</td><td>Imported as Airbnb Transaction History. Repeated rows are skipped, then bookings are matched.</td><td>Writes earnings rows</td></tr>
+<!-- /admin -->
+<tr><td>Send a photo</td><td>A receipt photo is read and becomes a review card.</td><td>Stores the image, adds a receipt waiting for review</td></tr>
+</tbody>
+</table>
+
+<h3 id="s8-not-commands">Things that look like commands but are not</h3>
+<aside class="callout warn"><p><strong>/weather</strong>, <strong>/calendar</strong> and <strong>/turnover</strong> are not commands. They are menu buttons only. Open <strong>/menu</strong> and tap the button. In OPS a typed one is ignored. In Finance it just reopens the menu.</p></aside>
+<aside class="callout warn"><p>A Finance-only command typed in the OPS group is silently ignored. You get no reply at all. This is normal. Go to the Finance group to run it. You only see "That one runs from the Finance group." if you tap the menu-button version.</p></aside>
+
+<h3 id="s8-text-triggers">Text triggers that are not commands</h3>
+<table>
+<thead><tr><th>You type or tap</th><th>Where</th><th>What happens</th></tr></thead>
+<tbody>
+<tr><td>A message that starts with <strong>Cassy</strong> or <strong>@cassy</strong></td><td>Both</td><td>Goes to <span class="term" data-term="cassy">Cassy</span>.</td></tr>
+<tr><td><strong>Ask Cassy</strong> or <strong>Cassy</strong> button</td><td>Both</td><td>The bot asks you to reply with your question. Your reply goes to Cassy.</td></tr>
+<tr><td>A mention of the bot, or a reply to a bot message that asked nothing</td><td>Both</td><td>Goes to Cassy.</td></tr>
+<tr><td><strong>Guest reply</strong> button, or a bare <strong>/draft</strong></td><td>Both</td><td>The bot asks for the guest's message or a screenshot. Your reply becomes a draft request.</td></tr>
+<tr><td>A photo captioned <strong>cassy draft</strong></td><td>Both</td><td>The guest chat in the picture is read and a reply is drafted.</td></tr>
+<tr><td>A spend sentence with an amount, like "bought water 500"</td><td>Finance</td><td>Cassy raises an expense confirm card.</td></tr>
+<tr><td>A reply to a <strong>#CH-</strong> guest card</td><td>OPS</td><td>Your text is sent to that Messenger guest. Check it before you send.</td></tr>
+<tr><td>A reply to a stock-count card with lines like <strong>2 20</strong> and <strong>7 0</strong></td><td>Finance</td><td>Sets several new counts at once. Nothing saved until <strong>Apply</strong>.</td></tr>
+<tr><td>Answering a question the bot just asked (amount, new count, price, cleaner and date)</td><td>Finance</td><td>Taken as the answer. A bad answer keeps the question open. A question expires after 10 minutes.</td></tr>
+<tr><td>Free chat in OPS not addressed to the bot</td><td>OPS</td><td>Ignored. Talk to people normally.</td></tr>
+<tr><td>A photo in OPS addressed to the bot</td><td>OPS</td><td>The bot asks: "Is this a power advisory to scan?" See the power cards below.</td></tr>
+</tbody>
+</table>
+<aside class="callout tip"><p>Every tap that fails says so on the card: "That tap failed, so nothing was changed". Tap again in a minute. A tap on an old card says "Expired". Ask for a new card.</p></aside>
+
+<h3 id="s8-wt-heading">Walkthrough - log an expense or a receipt photo</h3>
+<p>Two ways to get a cost into the ledger. Both are in the Finance group.</p>
+<div class="walkthrough" id="s8-wt-expense">
+<div class="wt-step" data-title="Pick the fast way or the photo way">
+<p>For a small cost you already know, type it. For a shop receipt, send a photo. Both go through a check before anything is saved.</p>
+</div>
+<div class="wt-step" data-title="Fast way - type the amount">
+<p>In the Finance group type the amount first, then a word for the category and the shop. For example <strong>250 supplies Puregold</strong>.</p>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">✅ Expense logged<br>PHP 250 · Supplies · Puregold<br>Ref: SAMPLE01</div>
+</div>
+<p>Write down the <strong>Ref</strong>.<!-- admin --> You need it if you ever have to void this row.<!-- /admin --> If the row is wrong, give the Ref to Lloyd.</p>
+</div>
+<div class="wt-step" data-title="Fast way - the bot may ask first">
+<p>If the same amount and category was logged today, or the amount is PHP 10,000 or more, the bot asks before it saves.</p>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">⚠️ Possible duplicate detected<br>PHP 250 · Supplies · Puregold<br>Do: tap Yes only if this is a different purchase.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Yes, it's a new entry</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">The expense is saved to the ledger. If it was a mistake, tell Lloyd.<!-- admin --> Use /void with the ref.<!-- /admin --> <span class="badge undo">Lloyd can undo</span></div>
+<div class="tg-result">Nothing is saved. The card closes. <span class="badge undo">Nothing to undo</span></div>
+</div>
+</div>
+<div class="wt-step" data-title="Photo way - send the receipt">
+<p>Send a photo of the receipt into the Finance group. The bot reads the shop, date, items and total. It posts a review card. Nothing is in the ledger yet.</p>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 Receipt - pending review<br>Sample Store · 30 Sep<br>Items: 3 · Total PHP 1,706 · Confidence: high</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Confirm P1,706</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Discard</button>
+</div>
+<div class="tg-result">The receipt is marked confirmed and added to the ledger. The bot may then ask to update stock. You cannot undo it in Telegram. If it is wrong, tell Lloyd.<!-- admin --> Use /void.<!-- /admin --> <span class="badge undo">Lloyd can undo</span></div>
+<div class="tg-result">The receipt is voided and nothing is added. <span class="badge undo">Nothing to undo</span></div>
+</div>
+</div>
+<div class="wt-step" data-title="Photo way - fix anything wrong first">
+<p>If the total or an item is wrong, fix it on the card before you confirm. Edits are free and the card redraws each time. See the full receipt card in the stock and expenses section below.</p>
+</div>
+<div class="wt-step" data-title="Update the stock if asked">
+<p>If the items match things you keep in stock, the bot asks "Update inventory?". Tap <strong>Update stock</strong> to add the bought quantities. Tap <strong>Skip</strong> to leave stock alone. You can always fix stock later with <strong>/count</strong>.</p>
+</div>
+</div>
+
+<h3 id="s8-stock-count">Stock counts</h3>
+<ol class="steps">
+<li>In Finance, type <strong>/count</strong>. Pick a group: Consumables, Stores or All groups.</li>
+<li>The bot posts a card with one button per item. Each button shows the system quantity.</li>
+<li>Tap an item. The bot asks for the new count. Type just the number, like <strong>20</strong>. Type <strong>0</strong> if none is left.</li>
+<li>Changed items show as <strong>3 - Item - 5 -> 2</strong> on the card. You can also reply with lines like <strong>2 20</strong> and <strong>7 0</strong> to set many at once.</li>
+<li>Tap <strong>Apply</strong> to save. Only mapped staff can. Nothing is saved before that.</li>
+</ol>
+<aside class="callout note"><p>Apply is refused if the stock moved since you opened the list, or if the item is movement-controlled. Open a fresh <strong>/count</strong> and try again. Apply cannot be undone. To fix a wrong count, count again.</p></aside>
+
+<h3 id="s8-cards-intro">Every card, and what its buttons do</h3>
+<p>Below is a replica of every card the bot posts. The data is made up. Tap a button to read what really happens. Nothing is sent from this page.</p>
+<p>The first line of a card starts with an emoji that tells you how serious it is:</p>
+<ul>
+<li>🟢 DAILY - a normal report.</li>
+<li>🟡 ATTENTION - something needs a look.</li>
+<li>🔴 ALERT - act now.</li>
+<li>🏠 NEW BOOKING, 💬 GUEST, 🧹 CLEANING, 🧾 FINANCE, 📋 WEEKLY - the topic.</li>
+</ul>
+<p>Most cards end with a <strong>Do:</strong> line. That is the one thing to do. A card that says <strong>Do: send ... this</strong> carries the ready text on a line that starts with 📨.</p>
+<aside class="callout danger"><p>These put money or data in place at once for whoever taps them: <strong>✅ Received Payment</strong> (OPS)<!-- admin -->, <strong>/void</strong><!-- /admin --> and <strong>/brownout</strong>. Read the card before you tap.</p></aside>
+
+<h4 id="s8-menu-cards">Menu cards and buttons that appear on many cards</h4>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🏠 Cascade Finance<br>Choose what you want to do.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">Log Expense</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Cleaning Fees</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Reports</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">OPS Notices</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Inventory</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Cassy</button>
+</div>
+<div class="tg-result">Opens a sub-menu: Guided /log, Fast entry, Receipt OCR. The last two are help cards. Nothing is saved.</div>
+<div class="tg-result">Opens a sub-menu: Mark paid, Manual entry, OPS ack card. These run /payclean, /manualclean and /notifyclean.</div>
+<div class="tg-result">Opens a sub-menu: Summary<!-- admin --> and Void entry. Void entry only shows how to use /void<!-- /admin -->.</div>
+<div class="tg-result">Opens a sub-menu: Brownout, Calendar, All notices, Weather, Turnover.</div>
+<div class="tg-result">Opens a sub-menu: Low stock, Full list, Update counts, Purchase receipt, and a link to the dashboard.</div>
+<div class="tg-result">Opens a sub-menu: How to ask, and Draft a guest reply. Both are help cards.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">📌 Cascade OPS<br>Choose what you want to do.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">Brownout</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Calendar</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Weather now</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Turnover</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Stock check</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Full inventory</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Ask Cassy</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Draft a reply</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">View all notices</button>
+</div>
+<div class="tg-result">Lists the upcoming brownout notices. It adds nothing. To add one, type /brownout.</div>
+<div class="tg-result">Lists upcoming holidays, events and reminders. There is no typed /calendar command.</div>
+<div class="tg-result">Posts the weather now. There is no typed /weather command.</div>
+<div class="tg-result">Posts the turnover schedule: arrivals and departures for today and the next two days. There is no typed /turnover command.</div>
+<div class="tg-result">Shows the low-stock list.</div>
+<div class="tg-result">Posts the full stock report, low items first.</div>
+<div class="tg-result">The bot asks you to reply with your question. Your reply goes to Cassy.</div>
+<div class="tg-result">The bot asks for the guest's message or a screenshot. It then drafts a reply for you to copy. Nothing is sent.</div>
+<div class="tg-result">Shows the next 15 active notices.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">💬 GUEST · welcome back<br>Sample Guest · CH-SAMPLE<br>📨 Welcome back, Sample Guest. We are glad to host you again.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+</div>
+<div class="tg-result">The bot posts the 📨 text alone in one message so you can long-press it and copy it. It copies nothing by itself and sends nothing to the guest. <span class="badge undo">Harmless</span></div>
+<div class="tg-result">Cassy rewrites the text to be warmer or shorter, with the same facts. She posts it as a "Revised draft". Nothing is sent to anyone. <span class="badge undo">Harmless</span></div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🟢 DAILY · low stock<br>📦 Out of stock: 1 item</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📦 Inventory</button>
+</div>
+<div class="tg-result">Posts the full stock report, low items first. <span class="badge undo">Harmless</span></div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 FINANCE · money card<br>Do: log any cost that goes with this.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">💰 Log expense</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">🧾 Records</button>
+</div>
+<div class="tg-result">Opens the category picker. Nothing is saved until you finish the steps. <span class="badge undo">Cancel any time</span></div>
+<div class="tg-result">Opens the records page in the dashboard. <span class="badge undo">Harmless</span></div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🔢 Question from the bot<br>Type the amount, and the shop if you like: 1706 or 1706 Lazada</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Only the person who was asked">❌ Cancel</button>
+</div>
+<div class="tg-result">The question closes: "Cancelled. Nothing saved." Only the person who was asked can cancel. <span class="badge undo">Nothing to undo</span></div>
+</div>
+
+<h3 id="s8-cards-bookings">Bookings and payments</h3>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🏠 NEW BOOKING · Direct DIR-SAMPLE · HOLD<br>Sample Guest · 0917 000 0000 · guest@example.com<br>Dates held for 24 hours.<br>Do: wait for the receipt card, then tap Confirm there.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">💰 Log expense</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">🧾 Records</button>
+</div>
+<div class="tg-result">Opens the category picker. Nothing is saved until you finish the steps.</div>
+<div class="tg-result">Opens the records page in the dashboard.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 FINANCE · receipt DIR-SAMPLE<br>(photo of the payment proof)<br>The AI read: amount, channel, reference, confidence.<br>Do: check the money is really in GCash or Maya before you tap Confirm.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Mapped staff" data-danger="Confirms the booking and messages the guest. Check the money first.">✅ Confirm booking</button>
+<button type="button" class="tg-btn" data-who="Mapped staff" data-danger="Cancels the request and tells the guest.">❌ Decline</button>
+</div>
+<div class="tg-result">The booking is confirmed and the calendar is updated. The guest is e-mailed and gets the confirmation message. OPS gets a "CONFIRMED" card. A second person who taps sees "Already reviewed". If the dates were taken in the meantime you see "NOT confirmed". An unmapped person sees "not authorized to approve payments" and the buttons stay. <span class="badge danger">You cannot undo this in Telegram</span></div>
+<div class="tg-result">The request is cancelled, the ledger row is voided and a Messenger guest is told. <span class="badge danger">You cannot undo this in Telegram</span></div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🟡 ATTENTION · receipt waiting DIR-SAMPLE<br>A receipt has waited 2 to 3 hours.<br>Do: scroll up to the receipt card and tap Confirm or Decline.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🟡 ATTENTION · hold expired DIR-SAMPLE<br>The request was unpaid after 24 hours. The dates are released.<br>📨 Hi Sample Guest, we released the held dates because we did not receive the payment. You are welcome to book again.<br>Do: send the guest this line.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+</div>
+<div class="tg-result">Posts the 📨 line alone so you can copy it. Nothing is sent. The hold itself is already released: the calendar block is cancelled and the ledger row is voided.<!-- admin --> If the guest paid another way, restore it from the dashboard.<!-- /admin --></div>
+<div class="tg-result">Cassy rewrites the line, same facts. Nothing is sent.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🟡 ATTENTION · 2 payments overdue<br>Airbnb payout not received 2 or more days after check-in.<br>Direct reservation fee with no receipt for 1 or more days.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🏠 NEW BOOKING · Airbnb CH-SAMPLE<br>Sample Guest · 2nd stay · last stay: check the issue is fixed<br>📨 Welcome back text ready.<br>(In Finance the same card also shows a <strong>Host earns</strong> line: what Airbnb will pay out.)</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+</div>
+<div class="tg-result">Posts the welcome-back text alone so you can copy it. Nothing is sent.</div>
+<div class="tg-result">Cassy rewrites the text, same facts. Nothing is sent.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 FINANCE · Airbnb payout<br>Total and split per guest.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">💰 Log expense</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">🧾 Records</button>
+</div>
+<div class="tg-result">Opens the category picker. Nothing is saved until you finish the steps.</div>
+<div class="tg-result">Opens the records page in the dashboard.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🟡 ATTENTION · cancelled CH-SAMPLE<br>The dates are open again.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📅 New Airbnb Booking Confirmed<br>A new confirmed stay appeared in the Airbnb calendar. The payout is matched later from the monthly earnings file.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🧹 Calendar reconciliation<br>More than one Airbnb calendar entry disappeared at once and was marked cancelled. Worth a look.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🟡 ATTENTION · blocked date<br>Oct 5 to Oct 8 is blocked on Airbnb and Cascade has no booking for it. What is it?</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Mapped staff">Maintenance or owner use</button>
+<button type="button" class="tg-btn" data-who="Mapped staff">A direct booking - I will add it</button>
+<button type="button" class="tg-btn" data-who="Mapped staff" data-danger="Only records your wish. You must unblock it on Airbnb yourself.">Unblock it on Airbnb</button>
+</div>
+<div class="tg-result">The answer is recorded. Nothing else changes.</div>
+<div class="tg-result">The answer is recorded. Add the direct booking yourself in the dashboard.</div>
+<div class="tg-result">The answer is recorded. This does not unblock anything. Open Airbnb and unblock the dates yourself. An unanswered card becomes a Follow-ups task after a week.</div>
+</div>
+
+<h3 id="s8-cards-cleaning">Cleaning</h3>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🧹 CLEANING · report 2026-09-29<br>Meter readings and change, completion 100%, issues flagged: none.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🧹 CLEANING · work order<br>Issue: aircon remote missing. Next guest: today. Blocks arrival: no.<br>📨 Suggested guest reply is ready.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+</div>
+<div class="tg-result">Posts the suggested guest reply alone so you can copy it. Nothing is sent. Close the work order in the dashboard when it is done.</div>
+<div class="tg-result">Cassy rewrites the reply, same facts. Nothing is sent.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 FINANCE · cleaning fee 2026-09-29<br>Cleaning complete. Fee due.<br>Do: send /payclean to issue the payment card.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🟡 ATTENTION · cleaning incomplete 2026-09-29<br>Missing: 2 items. No fee card until this is resolved.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 Cleaning Expense Claims<br>The cleaner listed extra expenses. No ledger entry was created. Finance reviews them.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">⚡💧 Utility Anomaly Detected<br>Power or water per night is over twice the 90-day average.<br>Do: check the meter photos, a leak, or an aircon left on.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧹 Pay Cleaning Fees<br>Tap a clean you have already paid for.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">Honey · 29 Sep</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Mark Paid P500</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Edit amount</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">Selects that clean and shows the payment card. Nothing is booked yet.</div>
+<div class="tg-result">The cleaner fee is booked to the ledger and the clean is stamped paid. The bot says to run /notifyclean to send the acknowledgement card. <span class="badge danger">Posts money. Not undoable in Telegram</span></div>
+<div class="tg-result">The bot asks for a new amount. Type just the number. Nothing is booked until you confirm.</div>
+<div class="tg-result">Closes the card. Nothing saved.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🧹 Cleaning Fees Settled<br>Honey · fees paid.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Acknowledge Payment</button>
+</div>
+<div class="tg-result">Every paid clean of that cleaner is stamped as acknowledged. The card ends with "Acknowledged by (your name) at (time)". It cannot be undone from Telegram.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🧹 Payment Ready - Honey<br>A cleaning invoice was sent from the dashboard.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group" data-danger="Posts the cleaner fee to the ledger at once, for whoever taps it.">✅ Received Payment</button>
+</div>
+<div class="tg-result">The cleaner fee is booked to the ledger and marked acknowledged. The card shows "Received - confirmed by (name) at (time)". Anyone in OPS can tap it, so a mistaken tap posts money. Only tap it when you are the cleaner and you have the money. <span class="badge danger">Posts money at once</span></div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🔴 ALERT · missed cleaning 1d<br>The cleaning report for the last check-out is missing.<br>Day 1 alert, a last reminder on day 3, then a Follow-ups task in the dashboard.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🟡 ATTENTION · turnover check 2026-09-29<br>Problem: fewer than 5 photos.<br>Also checked: meter reading, kWh per night, checklist.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🔴 ALERT · turnover unresolved 2026-09-28<br>Checked out 2 or more days ago and still open. Sent once, then a Follow-ups task.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🚩 Meter photo is not a meter<br>Also: "disagrees with the reading" and "could not be read". A re-upload is asked at the cleaner's next sign-in.</div>
+</div>
+
+<h3 id="s8-cards-stock">Stock and expenses</h3>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 Log an Expense<br>Select a category. (Or: Detected P250 - select a category.)</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">Supplies</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Utilities</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Cleaning</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Maintenance</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Repairs</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Platform Fees</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">Other</button>
+</div>
+<div class="tg-result">Shows the category, then asks for the amount and the shop. Use Cancel on the question if you change your mind.</div>
+<div class="tg-result">Shows the category, then asks for the amount and the shop.</div>
+<div class="tg-result">Shows the category, then asks for the amount and the shop.</div>
+<div class="tg-result">Shows the category, then asks for the amount and the shop.</div>
+<div class="tg-result">Shows the category, then asks for the amount and the shop.</div>
+<div class="tg-result">Shows the category, then asks for the amount and the shop.</div>
+<div class="tg-result">Shows the category, then asks for the amount and the shop.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">⚠️ Similar recent entry<br>Same amount and category today, or the same amount of PHP 500 or more in the last 7 days.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Yes, it's a new entry</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">The expense is written to the ledger. If it was a mistake, tell Lloyd.<!-- admin --> Use /void with the ref.<!-- /admin --> <span class="badge undo">Lloyd can undo</span></div>
+<div class="tg-result">Nothing is saved. <span class="badge undo">Nothing to undo</span></div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">💰 Large expense: P10,000<br>Any amount of PHP 10,000 or more asks first.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Confirm</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">The expense is written to the ledger. If it was a mistake, tell Lloyd.<!-- admin --> Use /void with the ref to reverse it.<!-- /admin --> <span class="badge undo">Lloyd can undo</span></div>
+<div class="tg-result">Nothing is saved. <span class="badge undo">Nothing to undo</span></div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">✅ Expense logged<br>PHP 250 · Supplies · Puregold<br>Ref: SAMPLE01</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 Receipt - pending review<br>Sample Store · 30 Sep · Total PHP 1,706 · Confidence: medium</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Confirm P1,706</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">💵 Enter total</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Edit item</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">➕ Add item</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">🗑️ Remove item</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">💵 Edit total</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Discard</button>
+</div>
+<div class="tg-result">The receipt is marked confirmed and added to the ledger. Not undoable in Telegram. If it is wrong, tell Lloyd.<!-- admin --> Use /void.<!-- /admin --> <span class="badge danger">Posts money</span></div>
+<div class="tg-result">Used when the AI was not sure of the total. You type the total and the card redraws. Free to redo. <span class="badge undo">Can undo</span></div>
+<div class="tg-result">Pick an item and type the fix. The card redraws. Nothing is saved yet. <span class="badge undo">Can undo</span></div>
+<div class="tg-result">Adds a line the AI missed. The card redraws. <span class="badge undo">Can undo</span></div>
+<div class="tg-result">Pick an item to take off. The card redraws. <span class="badge undo">Can undo</span></div>
+<div class="tg-result">You type the right total. The card redraws. <span class="badge undo">Can undo</span></div>
+<div class="tg-result">The receipt is voided. Nothing is added. Not undoable in Telegram. Send the photo again if you discarded by mistake.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">⚠️ Receipt already logged<br>This photo was seen before.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Different receipt - process it</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Already logged - skip</button>
+</div>
+<div class="tg-result">The bot reads the photo anyway and posts a new review card.</div>
+<div class="tg-result">The photo is skipped. Nothing new is saved.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📦 Update inventory?<br>The receipt items match tracked stock.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Update stock</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">⏭️ Skip</button>
+</div>
+<div class="tg-result">Adds the bought quantities to stock, with their cost. Fix it later with /count if it is wrong. <span class="badge undo">Fix with a new count</span></div>
+<div class="tg-result">Stock is left alone.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📦 Update counts - which group?</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">1 Consumables (12)</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">2 Stores (8)</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">3 All groups (20)</button>
+</div>
+<div class="tg-result">Posts the count card for consumables.</div>
+<div class="tg-result">Posts the count card for stores.</div>
+<div class="tg-result">Posts the count card for every group.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📦 Count - Consumables - 12 items<br>Tap an item to change its count. The card lives for 1 hour.<br>✏️ 3 - Bath towels - 5 -> 2</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">Bath towels (5)</button>
+<button type="button" class="tg-btn" data-who="Mapped staff">✅ Apply 1 change</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">The bot asks "System has 5. Type the new count." Type a number, or 0 if none is left. Nothing is saved yet.</div>
+<div class="tg-result">Writes all the new quantities. Refused if the stock moved since the list was opened. Not undoable except by counting again. <span class="badge danger">Saves at once</span></div>
+<div class="tg-result">Closes the card. Nothing saved.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 Cassy card: PHP 250.00 Supplies - Puregold?<br>Cassy heard a spend. Nothing is saved yet.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">✅ Log it</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">The expense is written to the ledger. If it was a mistake, tell Lloyd.<!-- admin --> Use /void with the ref to reverse it.<!-- /admin --> <span class="badge undo">Lloyd can undo</span></div>
+<div class="tg-result">Nothing is saved.</div>
+</div>
+<!-- admin -->
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">💸 Refund Confirmation<br>CH-SAMPLE · PHP 3,640 · Sample Guest · off-platform (bank or GCash)<br>Add rc at the end of the command if it goes through Airbnb.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group" data-danger="Writes a refund expense to the ledger. It does not message the guest.">✅ Confirm Refund</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">The refund expense is written and the card shows "Refund logged" with a ledger ref. It does not message the guest. Not undoable in Telegram. <span class="badge danger">Posts money</span></div>
+<div class="tg-result">Nothing is saved.</div>
+</div>
+<!-- /admin -->
+<!-- admin -->
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📊 Airbnb CSV imported<br>New rows, skipped rows, bookings matched, coverage dates.</div>
+</div>
+<!-- /admin -->
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🧾 Receipt read - pending review<br>Confirm or correct it in the finance dashboard.</div>
+</div>
+
+<h3 id="s8-cards-reports">Daily and weekly reports</h3>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🟢 DAILY · Wed 30 Sep<br>📥 Arriving today: 1<br>📤 Departing: 1<br>🛎 Mid-stay: night 2 of 3<br>📦 Out of stock: 1<br>🪪 ID still missing: 1<br>🌤 Weather<br>📆 Tomorrow<br>📨 A mid-stay check-in text is ready.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">📦 Inventory</button>
+</div>
+<div class="tg-result">Posts the mid-stay text alone so you can copy it. Nothing is sent.</div>
+<div class="tg-result">Cassy rewrites the text. Nothing is sent.</div>
+<div class="tg-result">Posts the full stock report.</div>
+</div>
+<aside class="callout note"><p>The daily card arrives at 08:00 and only when something moves: an arrival or departure today or tomorrow, a notice, a mid-stay morning, an item at zero, a missing ID, or a brownout on the board. On a quiet day there is no card.</p></aside>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">📋 WEEKLY · week of Mon 28 Sep<br>This week's arrivals · low stock · open work orders<br>Handed to you this week: 3 access, 1 payment<br>Still waiting over a day: Sample Guest (access, 2 days)</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📦 Inventory</button>
+</div>
+<div class="tg-result">Posts the full stock report. The card arrives on Mondays at 08:00, before the daily card.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">📋 WEEKLY · week of Mon 28 Sep<br>Receipts awaiting review · bookings decided this week and who confirmed them · overdue payouts (max 2)<!-- admin --> · Cassy's week · health warnings (max 2)<br>First of the month: send the Airbnb earnings file.<!-- /admin --></div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">💰 Log expense</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">🧾 Records</button>
+</div>
+<div class="tg-result">Opens the category picker. Nothing is saved yet.</div>
+<div class="tg-result">Opens the records page in the dashboard.</div>
+</div>
+
+<h3 id="s8-cards-alerts">System alerts</h3>
+<!-- admin -->
+<aside class="callout tip"><p>System alerts come from the <span class="term" data-term="verifier">verifier</span>, a checker that runs every hour and once a day. It only posts when something is wrong or has changed.</p></aside>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🔴 ALERT · booking dates look wrong<br>One finding on this card.<br>📨 We are looking into the dates and will confirm shortly.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Mapped staff">🙈 Known, stop reminding</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+</div>
+<div class="tg-result">Silences the reminders "until something about it changes". If the finding already cleared, you see "Closed on its own before you got here." Owner or admin only. Not undoable in Telegram.</div>
+<div class="tg-result">Posts the neutral guest line alone so you can copy it. Nothing is sent.</div>
+<div class="tg-result">Cassy rewrites the line. Nothing is sent.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🟡 ATTENTION · system check · 30 Sep<br>Up to five bullets. A fifth bullet says "and N more in the dashboard".<br>Resolved: earlier findings that cleared.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">⚠️ A scheduled job has stopped<br>Reason: never completed, failed several times in a row, or quiet for too long.<br>Do: open Settings, Jobs, and check its last error.</div>
+</div>
+<aside class="callout note"><p>The same alert can appear in OPS as "Operational Automation Risk" when the job matters to daily operations. If the alert router itself is down, the first alert is sent directly and says so.</p></aside>
+<!-- /admin -->
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🟡 ATTENTION · rain 2:00 PM - 3:00 PM<br>Rain is likely at 70% or more, and a guest arrives or leaves today.<br>Do: take an umbrella, warn the arriving guest, tell the cleaner.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🟡 ATTENTION · brownout Sat 3 Oct, 8:00 AM to 12:00 PM<br>Power will be off at the house.<br>Do: charge the EcoFlow and keep the emergency light ready. Guests are told only if they ask.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">📸 Is this a power advisory to scan?</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">⚡ Scan advisory</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Ignore</button>
+</div>
+<div class="tg-result">The poster is read and a result card follows. Nothing is saved yet.</div>
+<div class="tg-result">The photo is ignored.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">⚡ Power interruption affecting Cascade<br>⚡ 2026-10-03 08:00 (4h)<br>⚡ 2026-10-03 14:00 (2h)</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group" data-danger="Writes one brownout notice per window at once.">✅ Save 2 brownout notices</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">❌ Cancel</button>
+</div>
+<div class="tg-result">One brownout notice is written for each window. It shows in /notices and the 08:00 digest. No Telegram button removes it afterwards. Ask in the dashboard. If the poster does not list our feeder the button reads "Save anyway". <span class="badge danger">Saves at once</span></div>
+<div class="tg-result">Nothing is saved.</div>
+</div>
+<!-- admin -->
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">Cascade outbox reconciliation - ANOMALIES FOUND<br>Counts of stuck, stale, failed and undelivered messages, and the first five ids.<br>Sent daily at 08:00.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">Cascade n8n workflow FAILED<br>Workflow name, last step, and the error.</div>
+</div>
+<!-- /admin -->
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">🔴 ALERT · checklist error<br>A cleaner's checklist hit an error. The same kind of card goes to Finance for a booking site error.<br>Do: ask the person what they were doing and pass the card to Lloyd.</div>
+</div>
+
+<h3 id="s8-cards-guests">Guests</h3>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">💬 GUEST · confirmation DIR-SAMPLE<br>sent on Messenger. (Or "e-mailed to guest@example.com". Or "not sent (reason), please send it". Or "not sent: an open complaint, please write personally".)<br>📨 ⤵<br>Hi Sample Guest, your booking is confirmed.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✏️ Revise</button>
+</div>
+<div class="tg-result">Posts everything under the 📨 line alone so you can copy it. Nothing is sent.</div>
+<div class="tg-result">Cassy rewrites the message. Nothing is sent. The same card also appears for pre-arrival, mid-stay, check-out reminder and after-departure messages.</div>
+</div>
+<div class="tg-card" data-group="Finance">
+<div class="tg-text">🔑 DOOR CODE READY TO SEND · DIR-SAMPLE<br>Deposit and balance received.<br>Set a fresh code in the lock app, paste the text, and type the code where it says the placeholder.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group">📄 Show as text</button>
+</div>
+<div class="tg-result">Posts the text alone so you can copy it. The system never sends the door code and the card never contains it. There is no Revise button on this card on purpose.</div>
+</div>
+<div class="tg-card" data-group="OPS">
+<div class="tg-text">💬 GUEST · handoff #CH-SAMPLE<br>Sample Guest wrote on Messenger: "Hi, is the 12th free?"<br>The bot handed this to you. Two ready options are below.</div>
+<div class="tg-buttons">
+<button type="button" class="tg-btn" data-who="Anyone in the group" data-danger="Sends the text to the guest on Messenger.">Send option 1</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group" data-danger="Sends the text to the guest on Messenger.">Send option 2</button>
+<button type="button" class="tg-btn" data-who="Anyone in the group">✍️ Write my own</button>
+</div>
+<div class="tg-result">The first ready text is sent to the guest on Messenger. You cannot unsend it. Read it first.</div>
+<div class="tg-result">The second ready text is sent to the guest on Messenger. You cannot unsend it.</div>
+<div class="tg-result">The bot waits for your reply to this card. Whatever you type as a reply is sent to that guest.</div>
+</div>
+<aside class="callout tip"><p>The <strong>Send option</strong> buttons and a reply to a #CH- card send real messages to a real guest. This is the one place in Telegram where a tap reaches a guest. Everything Cassy drafts for you stays as a draft until you copy and send it yourself.</p></aside>

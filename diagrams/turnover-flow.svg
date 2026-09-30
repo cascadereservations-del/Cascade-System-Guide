@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 749" role="img" aria-labelledby="tf-title tf-desc">
+<title id="tf-title">How a turnover flows</title>
+<desc id="tf-desc">Phases 0 to 4 in the Cleaner app, then Submit, then the report and the next-morning checks.</desc>
+<defs><marker id="tf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--text-muted)"/></marker></defs>
+<rect x="12" y="10" width="336" height="69" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="32.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Phase 0: Set up</text>
+<text x="56" y="49.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Your name, cleaning type,</text>
+<text x="56" y="66.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">and the guest stay</text>
+<circle cx="34" cy="44.5" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="49.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">0</text>
+<path d="M180 81V102" fill="none" marker-end="url(#tf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="105" width="336" height="69" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="127.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Phase 1: Document</text>
+<text x="56" y="144.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">At least 5 photos before cleaning,</text>
+<text x="56" y="161.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">meter readings and meter photos</text>
+<circle cx="34" cy="139.5" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="144.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">1</text>
+<path d="M180 176V197" fill="none" marker-end="url(#tf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="200" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="222.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Phase 2: Arrive and prep</text>
+<text x="56" y="239.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Checklist, then the dwell timer</text>
+<circle cx="34" cy="226.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="230.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">2</text>
+<path d="M180 254V275" fill="none" marker-end="url(#tf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="278" width="336" height="69" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="300.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Phase 3: Clean</text>
+<text x="56" y="317.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">At least 2 kitchen photos,</text>
+<text x="56" y="334.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">then the supply log</text>
+<circle cx="34" cy="312.5" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="317.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">3</text>
+<path d="M180 349V370" fill="none" marker-end="url(#tf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="373" width="336" height="69" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="395.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Phase 4: Finish</text>
+<text x="56" y="412.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Confirm &amp; Leave, then at least</text>
+<text x="56" y="429.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">5 after photos</text>
+<circle cx="34" cy="407.5" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="412.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">4</text>
+<path d="M180 444V465" fill="none" marker-end="url(#tf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="468" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="180" y="490.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Tap Submit Now</text>
+<text x="180" y="507.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="middle" style="fill:var(--text)">Sends your report</text>
+<path d="M180 522V543" fill="none" marker-end="url(#tf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="546" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--success);stroke-width:2"/>
+<text x="180" y="568.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">Report arrives</text>
+<text x="180" y="585.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="middle" style="fill:var(--text)">In the OPS group and by e-mail</text>
+<path d="M180 600V621" fill="none" marker-end="url(#tf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="624" width="336" height="115" rx="8" style="fill:var(--surface-raised);stroke:var(--info);stroke-width:2"/>
+<text x="24" y="646.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Next-morning checks</text>
+<text x="24" y="663.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Done for you. Act only if flagged.</text>
+<line x1="22" y1="676" x2="338" y2="676" style="stroke:var(--border-strong);stroke-width:1;stroke-dasharray:4 3"/>
+<text x="24" y="697.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">Meter photo check at 07:30</text>
+<text x="24" y="714.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">Turnover check at 08:00</text>
+<text x="24" y="731.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">Missed cleaning alert at 08:00</text>
+</svg>

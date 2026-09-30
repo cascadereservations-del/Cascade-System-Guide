@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 813" role="img" aria-labelledby="af-title af-desc">
+<title id="af-title">How an alert reaches you</title>
+<desc id="af-desc">A check or job posts a card to the Finance or OPS group. A person acts, then it resolves or is marked known. If a job itself stops, the heartbeat monitor and alert router raise it.</desc>
+<defs><marker id="af-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--text-muted)"/></marker></defs>
+<rect x="12" y="10" width="336" height="86" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="24" y="32.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">A check or job runs</text>
+<text x="24" y="49.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Hourly and daily checks watch</text>
+<text x="24" y="66.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">bookings, payments and cleaning.</text>
+<text x="24" y="83.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">It posts a card in Finance or OPS.</text>
+<path d="M180 98V110M94 110H266M94 110V126M266 110V126" fill="none" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="128" width="164" height="88" rx="8" style="fill:var(--surface-raised);stroke:var(--danger);stroke-width:2"/>
+<text x="24" y="150.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">ALERT</text>
+<text x="24" y="167.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Red. Its own card.</text>
+<text x="24" y="184.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Needs action now.</text>
+<rect x="184" y="128" width="164" height="88" rx="8" style="fill:var(--surface-raised);stroke:var(--warn);stroke-width:2"/>
+<text x="196" y="150.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">ATTENTION</text>
+<text x="196" y="167.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Yellow. One shared</text>
+<text x="196" y="184.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">card for several</text>
+<text x="196" y="201.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">things.</text>
+<path d="M94 218V230M266 218V230M94 230H266M180 230V250" fill="none" style="stroke:var(--text-muted);stroke-width:2"/>
+<path d="M180 230V250" fill="none" marker-end="url(#af-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="252" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="24" y="274.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">A person acts</text>
+<text x="24" y="291.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Read the Do: line and do that one thing</text>
+<path d="M180 306V318M94 318H266M94 318V334M266 318V334" fill="none" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="336" width="164" height="88" rx="8" style="fill:var(--surface-raised);stroke:var(--success);stroke-width:2"/>
+<text x="24" y="358.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Resolved</text>
+<text x="24" y="375.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">The check clears</text>
+<text x="24" y="392.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">by itself.</text>
+<rect x="184" y="336" width="164" height="88" rx="8" style="fill:var(--surface-raised);stroke:var(--info);stroke-width:2"/>
+<text x="196" y="358.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Known, stop</text>
+<text x="196" y="375.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">reminding</text>
+<text x="196" y="392.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Stops the repeats.</text>
+<text x="196" y="409.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Mapped staff only.</text>
+<path d="M12 446H348" fill="none" style="stroke:var(--border-strong);stroke-width:1.5;stroke-dasharray:5 4"/>
+<text x="180" y="472.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--text-heading)">If a job itself goes quiet</text>
+<rect x="12" y="488" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--warn);stroke-width:2"/>
+<text x="24" y="510.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">A job stops reporting</text>
+<text x="24" y="527.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">It has not checked in on time</text>
+<path d="M180 542V563" fill="none" marker-end="url(#af-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="566" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="24" y="588.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Heartbeat monitor</text>
+<text x="24" y="605.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Checks every job, every 15 minutes</text>
+<path d="M180 620V641" fill="none" marker-end="url(#af-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="644" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="24" y="666.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Alert router</text>
+<text x="24" y="683.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Runs every 5 minutes</text>
+<path d="M180 698V719" fill="none" marker-end="url(#af-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="722" width="336" height="81" rx="8" style="fill:var(--surface-raised);stroke:var(--danger);stroke-width:2"/>
+<text x="24" y="744.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Telegram card</text>
+<text x="24" y="761.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">A scheduled job has stopped</text>
+<line x1="22" y1="774" x2="338" y2="774" style="stroke:var(--border-strong);stroke-width:1;stroke-dasharray:4 3"/>
+<text x="24" y="795.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">Then a person acts, as above.</text>
+</svg>

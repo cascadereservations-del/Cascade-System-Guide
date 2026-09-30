@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 934" role="img" aria-labelledby="bf-title bf-desc">
+<title id="bf-title">How a booking flows</title>
+<desc id="bf-desc">From dates picked to turnover: guest pays, dates are held, Finance confirms, guest messages go out, then check-in, check-out and cleaning.</desc>
+<defs><marker id="bf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--text-muted)"/></marker></defs>
+<rect x="12" y="10" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="32.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Guest picks dates</text>
+<text x="56" y="49.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">On the booking site or Messenger</text>
+<circle cx="34" cy="36.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="40.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">1</text>
+<path d="M180 64V85" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="88" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="110.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Guest pays 50% or in full</text>
+<text x="56" y="127.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Then uploads a receipt</text>
+<circle cx="34" cy="114.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="118.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">2</text>
+<path d="M180 142V163" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="166" width="336" height="98" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="188.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Dates are held</text>
+<text x="56" y="205.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Nobody else can book them</text>
+<line x1="22" y1="218" x2="338" y2="218" style="stroke:var(--border-strong);stroke-width:1;stroke-dasharray:4 3"/>
+<text x="56" y="239.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">Unpaid after 24 hours:</text>
+<text x="56" y="256.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">the hold is released.</text>
+<circle cx="34" cy="192.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="196.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">3</text>
+<path d="M180 266V287" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="290" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="312.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Receipt card in Finance</text>
+<text x="56" y="329.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Shows in the Telegram Finance group</text>
+<circle cx="34" cy="316.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="320.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">4</text>
+<path d="M180 344V365" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="368" width="336" height="115" rx="8" style="fill:var(--surface-raised);stroke:var(--bronze);stroke-width:2"/>
+<text x="56" y="390.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Confirm or Decline</text>
+<text x="56" y="407.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Mapped staff tap a card button</text>
+<line x1="22" y1="420" x2="338" y2="420" style="stroke:var(--border-strong);stroke-width:1;stroke-dasharray:4 3"/>
+<text x="56" y="441.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">Airbnb bookings join here,</text>
+<text x="56" y="458.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">already confirmed, through</text>
+<text x="56" y="475.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text-muted)">e-mail and calendar sync.</text>
+<circle cx="34" cy="394.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="398.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">5</text>
+<path d="M180 485V506" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="509" width="336" height="69" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="531.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Scheduled guest messages</text>
+<text x="56" y="548.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">Confirmation, arrival details,</text>
+<text x="56" y="565.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">check-out reminder, thank-you</text>
+<circle cx="34" cy="543.5" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="548.0" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">6</text>
+<path d="M180 580V601" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="604" width="336" height="86" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="626.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Door code</text>
+<text x="56" y="643.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">A new code for every guest.</text>
+<text x="56" y="660.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">A person sets it. The system</text>
+<text x="56" y="677.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">never sends it.</text>
+<circle cx="34" cy="647.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="651.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">7</text>
+<path d="M180 692V713" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="716" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="738.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Check-in at 2 PM</text>
+<text x="56" y="755.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">The guest arrives</text>
+<circle cx="34" cy="742.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="746.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">8</text>
+<path d="M180 770V791" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="794" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--border-strong);stroke-width:1.5"/>
+<text x="56" y="816.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Check-out at 12 noon</text>
+<text x="56" y="833.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">The guest leaves</text>
+<circle cx="34" cy="820.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="824.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">9</text>
+<path d="M180 848V869" fill="none" marker-end="url(#bf-arrow)" style="stroke:var(--text-muted);stroke-width:2"/>
+<rect x="12" y="872" width="336" height="52" rx="8" style="fill:var(--surface-raised);stroke:var(--success);stroke-width:2"/>
+<text x="56" y="894.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="start" style="fill:var(--text-heading)">Turnover</text>
+<text x="56" y="911.5" font-family="inherit" font-size="13" font-weight="400" text-anchor="start" style="fill:var(--text)">The cleaner resets the unit</text>
+<circle cx="34" cy="898.0" r="12" style="fill:var(--bronze)"/>
+<text x="34" y="902.5" font-family="inherit" font-size="13" font-weight="700" text-anchor="middle" style="fill:var(--bg)">10</text>
+</svg>

@@ -1,0 +1,56 @@
+<!--
+id: s1-big-picture
+title: The big picture
+audience: both
+roles: all
+order: 10
+icon: map
+summary: The guest side and the staff side of Cascade, and where information lives.
+-->
+<p class="lead">Cascade has two sides. The guest side is what guests see. The staff side is what the team uses to keep the stay running. This page shows how they connect.</p>
+
+<h3 id="s1-map">The map</h3>
+<p>Read the picture from left to right. A guest finds us, books, stays and leaves. Each step has a staff task behind it. Tap a box in the picture to jump to the chapter about it.</p>
+<figure class="diagram">
+<!-- include: diagrams/big-picture.svg -->
+<figcaption>Guests on the left, the team on the right, and one record in the middle.</figcaption>
+</figure>
+
+<h3 id="s1-guest-side">The guest side</h3>
+<ul>
+  <li><strong>Booking site.</strong> The guest picks dates, sees the price and sends a booking request with a payment receipt.</li>
+  <li><strong>Messenger.</strong> The guest can ask questions or book here. <span class="term" data-term="cassy">Cassy</span> answers first and calls the host when a person is needed.</li>
+  <li><strong>Guest guide.</strong> After booking, the guest opens it for check-in steps, house help and things to do nearby.</li>
+  <li><strong>Airbnb.</strong> Some guests book on Airbnb. Those bookings reach our system by e-mail and calendar sync.</li>
+</ul>
+
+<h3 id="s1-staff-side">The staff side</h3>
+<ul>
+  <li><strong>Operations Manual.</strong> The standards and how-to guides for the house.</li>
+  <li><strong>Cleaner app.</strong> Where the cleaner records every clean with photos, meter readings and a checklist.</li>
+  <li><strong>Telegram.</strong> Two groups, <span class="term" data-term="finance-group">Finance</span> and <span class="term" data-term="ops-group">OPS</span>. Cards arrive here when something needs a person.</li>
+  <li><strong>Admin dashboard.</strong> The office view of bookings, guests, cleaning reports, stock and money.</li>
+</ul>
+
+<h3 id="s1-where-info">Where information lives</h3>
+<p>The dashboard shows the <span class="term" data-term="system-of-record">system of record</span>: the official place for bookings, guests, cleaning reports, stock and money. Telegram cards, e-mails and the Manual are ways to reach that record. They are not the record itself.</p>
+<aside class="callout note"><p>If a Telegram card and the dashboard disagree, the dashboard is right. Tell Lloyd what you saw.</p></aside>
+<table>
+  <thead><tr><th>You want to know</th><th>Look here</th></tr></thead>
+  <tbody>
+    <tr data-roles="office"><td>Is the unit booked on a date?</td><td>Dashboard, Bookings, Calendar</td></tr>
+    <tr data-roles="office"><td>Did a payment arrive?</td><td>The receipt card in the Finance group, then the dashboard</td></tr>
+    <tr><td>Was the unit cleaned?</td><td>The cleaning report card in the OPS group, or the cleaning report in the dashboard</td></tr>
+    <tr data-roles="cleaner"><td>How do I do a task in the house?</td><td>Operations Manual</td></tr>
+    <tr data-roles="office"><td>What did a guest ask?</td><td>The Messenger inbox and the hand-off cards in the OPS group</td></tr>
+    <tr><td>What needs my attention today?</td><td>The morning card in the OPS group at 08:00</td></tr>
+  </tbody>
+</table>
+
+<h3 id="s1-day">A day at Cascade</h3>
+<p>Many jobs run by themselves at set times. This timeline shows a normal day. All times are Manila time.</p>
+<figure class="diagram">
+<!-- include: diagrams/day-timeline.html -->
+<figcaption>What the system checks and posts across a normal day.</figcaption>
+</figure>
+<p>The full list of alert cards and what to do about them is in <a href="#s11-troubleshooting">When something goes wrong</a>.</p>

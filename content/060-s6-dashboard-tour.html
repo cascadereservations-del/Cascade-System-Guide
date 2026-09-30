@@ -1,0 +1,433 @@
+<!--
+id: s6-dashboard-tour
+title: A tour of the admin dashboard
+audience: both
+roles: office
+order: 60
+icon: dashboard
+summary: Every page of the admin dashboard for the office, with its buttons, who can press them, and which ones cannot be undone.
+-->
+<p class="lead">The admin dashboard is the office screen. It shows who is in the house, who is coming, what needs attention, and lets you decide bookings, log stock and check the money. This chapter walks through each page and each button.</p>
+
+<div class="task-finder">
+  <a class="task" href="#s6-today" data-roles="office"><strong>See today</strong><span>Who arrives, is the unit ready</span></a>
+  <a class="task" href="#s6-finance-review" data-roles="office"><strong>Check a payment</strong><span>Finance review queue</span></a>
+  <a class="task" href="#s7-booking-flow" data-roles="office"><strong>Confirm a booking</strong><span>From request to thank-you</span></a>
+  <a class="task" href="#s6-stock" data-roles="office"><strong>Update stock</strong><span>Receive or adjust an item</span></a>
+  <a class="task" href="#s6-search" data-roles="office"><strong>Find anything</strong><span>Press Ctrl+K</span></a>
+  <a class="task" href="#s6-undo" data-roles="office"><strong>Fix a mistake</strong><span>The Undo toast</span></a>
+</div>
+
+<h3 id="s6-how-to-read">How to read the badges</h3>
+<p>Each button below carries a label so you know what you are about to do.</p>
+<table>
+  <thead><tr><th>Badge</th><th>What it means</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td><td>Who can use the button. Owner (Lloyd) and Admin (Marifel) can do the same things in the dashboard.<!-- admin --> The only differences: only the owner can create another Admin login and only the owner can reopen a closed month.<!-- /admin --></td></tr>
+    <tr><td><span class="badge role">Cleaner</span></td><td>The cleaner account (Honey) can look at many pages but change almost nothing. See <a href="#s6-cleaner-view">What a cleaner account sees</a>.</td></tr>
+    <tr><td><span class="badge danger">Posts money at once</span></td><td>The button changes money or cannot be taken back. Read the screen first. Press once.</td></tr>
+    <tr><td><span class="badge undo">Can undo</span></td><td>After you save, a green message appears for 8 seconds with an <strong>Undo</strong> button.</td></tr>
+  </tbody>
+</table>
+
+<aside class="callout note"><p>Some old lines on screen still say &quot;two-factor&quot;, and the account menu may show a small &quot;No 2FA&quot; label. Ignore all of it. There is no second step today. Your name and PIN are enough.</p></aside>
+
+<h3 id="s6-signin">Signing in</h3>
+<figure class="annotated">
+  <img src="img/dashboard/signin.webp" alt="The dashboard sign-in card with a name box, a PIN box and a Sign in button">
+  <span class="hotspot" data-x="" data-y="" data-title="Your name" data-who="Everyone" data-undo="n/a">Type your first name, for example Honey. Capital letters do not matter.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="4-digit PIN" data-who="Everyone" data-undo="n/a">Your own four digits. The box hides them as you type.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Sign in" data-who="Everyone" data-undo="n/a">Grey until you have typed four digits. It says Signing in while it works.</span>
+  <figcaption>The sign-in card. Nothing typed here is shown in this guide.</figcaption>
+</figure>
+<ol class="steps">
+  <li>Open the dashboard on your phone or computer. The owner will give you the address.</li>
+  <li>Type your <strong>Your name</strong> and your <strong>4-digit PIN</strong>.</li>
+  <li>Tap <strong>Sign in</strong>.</li>
+  <li>The owner and Marifel land on <strong>Today</strong>. A cleaner lands on <strong>Operations</strong>.</li>
+</ol>
+<aside class="callout tip"><p>If you see <em>That name and PIN did not match. Check both and try again.</em>, check your spelling and the four digits. If it still fails, ask the owner to reset your PIN. If you see <em>This account has no active staff access</em>, your login was switched off. Ask the owner.</p></aside>
+<p>The link <strong>E-mail me a sign-in code</strong> only works for a real e-mail address. Staff logins do not have one, so do not use it.</p>
+<p>To sign out, open the <strong>Account menu</strong> (your initial, top right) and tap <strong>Sign out</strong>.</p>
+
+<h3 id="s6-nav">The menu on the left</h3>
+<p>The menu is on the left. On a phone, tap <strong>Toggle navigation</strong> to open it. You only see the items your role may use. Sub-pages appear when you are inside that section.</p>
+<table>
+  <thead><tr><th>Menu item</th><th>Sub-pages</th><th>Who sees it</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Today</strong></td><td>none</td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span></td></tr>
+    <tr><td><strong>Bookings</strong></td><td>List, Calendar, Inquiries</td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span></td></tr>
+    <tr><td><strong>Guests</strong></td><td>five tabs inside the page</td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td></tr>
+    <tr><td><strong>Operations</strong></td><td>Cleaning log, Work orders, Notices</td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span></td></tr>
+    <tr><td><strong>Inventory</strong></td><td>Stock, Purchases, Counts</td><td>Stock and Purchases: everyone. Counts: <span class="badge role">Owner</span> <span class="badge role">Admin</span></td></tr>
+    <tr><td><strong>Finance</strong></td><td>Review queue<!-- admin -->, Account book, Transactions, Reconciliation, Journals, Statements, Accounting setup<!-- /admin --></td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td></tr>
+<!-- admin -->
+    <tr><td><strong>KPIs &amp; Analytics</strong></td><td>none</td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td></tr>
+<!-- /admin -->
+<!-- admin -->
+    <tr><td><strong>Pricing</strong></td><td>none</td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td></tr>
+<!-- /admin -->
+<!-- admin -->
+    <tr><td><strong>Settings</strong></td><td>Staff, System health, Audit history, Guest contact</td><td>System health: everyone. The others: <span class="badge role">Owner</span> <span class="badge role">Admin</span></td></tr>
+<!-- /admin -->
+  </tbody>
+</table>
+<p>Under the menu is a group called <strong>Apps</strong> with links to the <strong>Guest guide</strong>, <strong>Cleaner checklist</strong>, <strong>Operations manual</strong> and <strong>Booking site</strong>.<!-- admin --> There is also a <strong>Legacy admin</strong> link. That is the old screen, kept only as a spare. You do not need it.<!-- /admin --></p>
+<p>If you open a page you may not use, you see a grey card: <em>Not available for your role.</em> Nothing is broken.</p>
+
+<h3 id="s6-topbar">The top bar</h3>
+<ul>
+  <li><strong>Toggle navigation</strong> opens or closes the menu. Shortcut: Ctrl+B (Cmd+B on a Mac).</li>
+  <li><strong>Search or jump to…</strong> opens the global search. See the next section.</li>
+  <li><strong>Apps</strong> (grid icon) has the same links as the Apps group.</li>
+  <li>The <strong>sun or moon icon</strong> lets you pick <strong>Light</strong>, <strong>Dark</strong> or <strong>System</strong>. It is saved on this device only.</li>
+  <li>The <strong>Account menu</strong> shows your name and role, and has <strong>Sign out</strong>.</li>
+</ul>
+<p>Messages appear at the bottom right. Green means saved. Red means it did not work. Read the words in red. They tell you why.</p>
+
+<h3 id="s6-search">Global search</h3>
+<p>Press <strong>Ctrl+K</strong> (Cmd+K on a Mac), or tap <strong>Search or jump to…</strong>. Type at least two letters.</p>
+<ul>
+  <li><strong>Records</strong> finds bookings by guest name or code, guests by name, phone or e-mail (owner and Admin only), stock items, cleaning reports and follow-up tasks. Tap a result to open it.</li>
+  <li><strong>Pages</strong> lists every page you may open. Type <em>cal</em> and choose <strong>Bookings › Calendar</strong>.</li>
+</ul>
+<p>Search only reads. It never changes anything. If it says <em>No matches</em>, try fewer letters.</p>
+
+<h3 id="s6-undo">Undo toasts and the change history</h3>
+<p>After many saves, the green message has an <strong>Undo</strong> button for 8 seconds. Tap it and the record goes back to how it was. The undo is also written in the history.</p>
+<table>
+  <thead><tr><th>Has an Undo</th><th>Has no Undo</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Follow-ups, work orders, notices, <!-- admin -->manual transactions and voids, <!-- /admin -->shopping-list changes, meter flags, stock adjustments</td>
+      <td>Booking decisions and cancellations, <!-- admin -->journals (use <strong>Reverse</strong>), <!-- /admin -->stock counts, <!-- admin -->price changes, staff changes, <!-- /admin -->guest merges, companions, cleaning evidence and readiness reviews</td>
+    </tr>
+  </tbody>
+</table>
+<!-- admin -->
+<p>Every change that can be undone is also listed in <strong>Settings &gt; Audit history</strong>. The owner and Marifel can undo it from there.</p>
+<!-- /admin -->
+
+<h3 id="s6-shortcuts">Keyboard shortcuts</h3>
+<table>
+  <thead><tr><th>Keys</th><th>What they do</th></tr></thead>
+  <tbody>
+    <tr><td>Ctrl+K or Cmd+K</td><td>Open or close the search</td></tr>
+    <tr><td>Ctrl+B or Cmd+B</td><td>Open or close the menu</td></tr>
+    <tr><td>Tab, then Enter or Space</td><td>Open a row in a table</td></tr>
+    <tr><td>Esc</td><td>Close a window or side panel</td></tr>
+  </tbody>
+</table>
+<p>There are no other shortcuts.</p>
+
+<h3 id="s6-lists">How lists behave</h3>
+<ul>
+  <li>Your filters are saved in the address. The Back button and a copied link bring the same view back. <strong>Clear filters</strong> appears when a filter is on.</li>
+  <li>Tap a column heading to sort. It sorts only the 25 rows on the page you are looking at. Use <strong>Previous page</strong> and <strong>Next page</strong> to move.</li>
+  <li><strong>Columns</strong> shows or hides columns. Some lists have a <strong>Comfortable</strong> or <strong>Compact</strong> switch.</li>
+  <li>A copy icon next to a code, phone or e-mail copies it. It turns into a tick.</li>
+  <li>A dash (—) means &quot;not known&quot;. It never means zero.</li>
+  <li>A red box with <strong>Retry</strong> means the page could not load. It does <strong>not</strong> mean everything is fine. Tap <strong>Retry</strong>.</li>
+  <li>Save forms protect you from a double tap after a bad signal. Still, press a save button once and wait for the message.</li>
+  <li>Money shows as PHP. All times are Manila time.</li>
+</ul>
+
+
+<h3 id="s6-today">Today</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span> Your morning page. Nothing can be changed here. Every card is a link to the record behind it. It refreshes by itself every 2 minutes.</p>
+<figure class="annotated">
+  <img src="img/dashboard/today.webp" alt="The Today page with key figures, current stay, arrivals and departures, property readiness and what needs attention">
+  <span class="hotspot" data-x="27" data-y="20" data-title="Key figures" data-who="Owner, Admin" data-undo="n/a">Month-to-date occupancy, sold nights and booked nights ahead. Revenue and cash tiles show only for the owner and Admin.</span>
+  <span class="hotspot" data-x="64" data-y="55" data-title="Arrivals and departures" data-who="Everyone" data-undo="n/a">Who arrives and leaves today, and the next confirmed arrival.</span>
+  <span class="hotspot" data-x="31" data-y="75" data-title="Property readiness" data-who="Everyone" data-undo="n/a">Ready, not ready or awaiting review, from the last cleaning report. The button opens that report.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="What needs attention" data-who="Everyone" data-undo="n/a">A list ordered P1, P2 and so on. Each line has an Open button.</span>
+  <figcaption>Today, as the owner sees it. A cleaner sees no Finance review card.</figcaption>
+</figure>
+<table>
+  <thead><tr><th>Card</th><th>What it tells you</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Current stay</strong></td><td>The guest in the house and their check-out date. &quot;Nobody in house by dates&quot; when empty.</td></tr>
+    <tr><td><strong>Finance review</strong></td><td>How many transactions and payment receipts wait for a decision, and how many cleaner fees are unpaid. Owner and Admin only.</td></tr>
+    <tr><td><strong>Low stock</strong>, <strong>Follow-ups and handoffs</strong>, <strong>Notices</strong></td><td>Short lists that link to Inventory, the Guests page and Notices.</td></tr>
+  </tbody>
+</table>
+<aside class="callout warn"><p>&quot;Nothing needs attention right now&quot; is worked out from real data. A red or &quot;unavailable&quot; box means a section failed to load. It does not mean all is clear. Tap <strong>Retry</strong>.</p></aside>
+<p>At the bottom you see <em>Source updated</em> and <em>Calendar sync</em> times. That is how old the data is.</p>
+
+<h3 id="s6-bookings">Bookings list</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span> One list of Airbnb stays, direct bookings and calendar blocks. You can only read it here. Tap a row to open the booking.</p>
+<figure class="annotated">
+  <img src="img/dashboard/bookings.webp" alt="The Bookings list with tabs, a filter bar and a table of guests and dates">
+  <span class="hotspot" data-x="52" data-y="27" data-title="Tabs" data-who="Everyone" data-undo="n/a">All, Arrivals, In house, Upcoming, Pending inquiries, Unresolved payments.</span>
+  <span class="hotspot" data-x="39" data-y="34" data-title="Filter bar" data-who="Everyone" data-undo="n/a">Search by guest or code. Filter by Status, Channel, dates and Balance.</span>
+  <span class="hotspot" data-x="67" data-y="52" data-title="Channel" data-who="Everyone" data-undo="n/a">Airbnb, Direct, Calendar only or Blocked. The last two are calendar blocks, not stays.</span>
+  <span class="hotspot" data-x="31" data-y="20" data-title="Calendar" data-who="Everyone" data-undo="n/a">Header button that opens the month grid.</span>
+  <figcaption>The Bookings list.</figcaption>
+</figure>
+<ul>
+  <li><strong>Unresolved payments</strong> shows direct bookings with no receipt or deposit recorded.</li>
+  <li>The last column shows the calendar link: <strong>Linked</strong>, <strong>Date match</strong> or <strong>No event</strong>.</li>
+  <li>The footer says <em>Calendar last synced</em>.</li>
+</ul>
+
+<h3 id="s6-calendar">Calendar</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span> A month grid of who stays which nights. Read only. Dragging does nothing on purpose.</p>
+<figure class="annotated">
+  <img src="img/dashboard/calendar.webp" alt="The month calendar with guest chips on the nights they stay">
+  <span class="hotspot" data-x="28" data-y="20" data-title="Month arrows and Today" data-who="Everyone" data-undo="n/a">Previous month, Next month and a Today button.</span>
+  <span class="hotspot" data-x="41" data-y="33" data-title="Guest chips" data-who="Everyone" data-undo="n/a">An arrow marks the check-in day. Tap a chip to open the booking.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Legend" data-who="Everyone" data-undo="n/a">Solid is Airbnb, blue is direct, dashed is an inquiry, struck through is blocked.</span>
+  <figcaption>The month calendar.</figcaption>
+</figure>
+<p>A stay covers the check-in night but not the check-out night. Cancelled stays are not drawn.</p>
+
+<h3 id="s6-inquiries">Inquiries</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> to decide. Everyone can read. Direct booking requests (each one is an <span class="term" data-term="inquiry">inquiry</span>) from the booking site wait here for a yes or no.</p>
+<figure class="annotated">
+  <img src="img/dashboard/inquiries.webp" alt="The Inquiries page with one card per pending direct booking request and Confirm and Decline buttons">
+  <span class="hotspot" data-x="62" data-y="30" data-title="Inquiry card" data-who="Owner, Admin" data-undo="n/a">Guest, code, dates, guests, quoted price, deposit and time asked.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Confirm" data-who="Owner, Admin" data-undo="no">Confirms the booking and starts the guest messages. It cannot be undone here.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Decline" data-who="Owner, Admin" data-undo="no">Declines the request. The guest is not messaged. Reply in Messenger.</span>
+  <span class="hotspot" data-x="93" data-y="12" data-title="Open in list" data-who="Everyone" data-undo="n/a">Shows the same requests in the Bookings list.</span>
+  <figcaption>Pending inquiries.</figcaption>
+</figure>
+<table>
+  <thead><tr><th>Button</th><th>What happens</th><th>Badge</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Confirm</strong> then <strong>Confirm</strong> in the window</td><td>The dates are checked again. The booking becomes confirmed, the calendar block is made, and the system sends the guest the confirmation message.</td><td><span class="badge danger">Cannot be undone</span></td></tr>
+    <tr><td><strong>Decline</strong> then <strong>Decline</strong> in the window</td><td>The request is closed. The guest is <strong>not</strong> told by the system.</td><td><span class="badge danger">Cannot be undone</span></td></tr>
+  </tbody>
+</table>
+<aside class="callout warn"><p>The dashboard stops you if the payment has no approved review yet: <em>No approved Finance review of this booking&#39;s payment yet.</em> Approve the receipt first in the <a href="#s6-finance-review">Finance review queue</a>. If two people decide the same booking, the second sees <em>Those dates are no longer available or this decision already exists.</em> That is safe.</p></aside>
+<p>The full path from request to confirmation is in <a href="#s7-booking-flow">A booking from start to finish</a>.</p>
+
+<h3 id="s6-booking-detail">Booking detail</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span> Tap any booking to open it. Only <strong>Cancel booking</strong> can change anything, and only for direct bookings.</p>
+<figure class="annotated">
+  <img src="img/dashboard/booking-detail.webp" alt="A booking detail page with cards for States, Stay and Charges and a Cancel booking button">
+  <span class="hotspot" data-x="40" data-y="20" data-title="Header card" data-who="Everyone" data-undo="n/a">Guest, booking code with a copy icon, channel, dates and payment state.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Cancel booking" data-who="Owner, Admin" data-undo="no">Direct bookings only, and only if not already cancelled or finished.</span>
+  <span class="hotspot" data-x="33" data-y="69" data-title="Stay and Charges" data-who="Owner, Admin" data-undo="n/a">Dates, nights, guests, and the money. Cleaners do not see the money.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Timeline" data-who="Everyone" data-undo="n/a">Staff decisions and lifecycle events for this booking.</span>
+  <figcaption>A booking, opened.</figcaption>
+</figure>
+<p>Cards on the page: <strong>States</strong>, <strong>Stay</strong>, <strong>Charges</strong>, <strong>Payment evidence and ledger</strong>, <strong>Cleaning</strong>, <strong>Timeline</strong> and <strong>Conversations</strong>. Buttons: <strong>Back</strong> and <strong>Guest profile</strong>.</p>
+<h4 id="s6-cancel-booking">Cancel booking</h4>
+<ol class="steps">
+  <li>Open the direct booking. Tap <strong>Cancel booking</strong>.</li>
+  <li>In <strong>Cancel this booking</strong>, type the <strong>Reason (required)</strong>. Three letters or more.</li>
+  <li>Tap <strong>Cancel booking</strong> to confirm, or <strong>Keep booking</strong> to stop.</li>
+  <li>Read the message <em>Booking cancelled</em>.</li>
+</ol>
+<aside class="callout danger"><p><span class="badge danger">Cannot be undone</span> The guest is told automatically. The calendar dates are freed. <strong>No refund is made.</strong> Money is not touched. A refund has to be handled by the owner or Marifel outside this button.</p></aside>
+<!-- admin -->
+<aside class="callout note"><p>There is no refund button and no change-dates button in the dashboard today. Some text on the Guests page mentions refunds on Bookings. That text is out of date.</p></aside>
+<!-- /admin -->
+
+<h3 id="s6-guests">Guests</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> only. The cleaner never sees this page. It is the guest book, the follow-up list and the Messenger handoff list. It has five tabs.</p>
+<figure class="annotated">
+  <img src="img/dashboard/guests.webp" alt="The Guests page with five tabs and the guest table">
+  <span class="hotspot" data-x="61" data-y="21" data-title="Five tabs" data-who="Owner, Admin" data-undo="n/a">Guest CRM, Collected records, Follow-ups, Messenger handoffs, Inquiries.</span>
+  <span class="hotspot" data-x="37" data-y="27" data-title="Search and filters" data-who="Owner, Admin" data-undo="n/a">Name, phone or e-mail. Filter by Tier (New, Returning, VIP) and Flags.</span>
+  <span class="hotspot" data-x="31" data-y="45" data-title="Guest row" data-who="Owner, Admin" data-undo="n/a">Tap a row to open the guest profile.</span>
+  <figcaption>The Guests page.</figcaption>
+</figure>
+<table>
+  <thead><tr><th>Tab</th><th>What it is for</th><th>Buttons</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Guest CRM</strong></td><td>Every guest, with stays, last stay, tier and flags such as ID on file, Birthday soon or Missing details.</td><td><strong>Clear filters</strong></td></tr>
+    <tr><td><strong>Collected records</strong></td><td>A private viewer for the guest details folder kept on this computer. Nothing is uploaded.</td><td><strong>Choose folder</strong>, <strong>Choose collection file</strong>, <strong>Clear records</strong></td></tr>
+    <tr><td><strong>Follow-ups</strong></td><td>To-dos about a guest, for example a promised item. Each row has an <strong>Open guest</strong> link. <span class="badge undo">Can undo</span></td><td><strong>New follow-up</strong></td></tr>
+    <tr><td><strong>Messenger handoffs</strong></td><td>Times the concierge passed a guest to the host. Read only. You answer in the Facebook Page inbox.</td><td>copy icon on the guest ID</td></tr>
+    <tr><td><strong>Inquiries</strong></td><td>A read-only list of booking requests. Decide them on Bookings.</td><td>none</td></tr>
+  </tbody>
+</table>
+<h4 id="s6-records">Collected records</h4>
+<p>This tab reads a folder on this computer. The words on screen: <em>Records stay in this tab&#39;s memory and clear when you leave it.</em> Choose the prepared folder, then search. Tap a record to open its sheet. <strong>Reveal private details</strong> shows ID data only while you look.</p>
+<aside class="callout warn"><p>Records here can include ID document data. Never take a screenshot of a loaded record. Tap <strong>Clear records</strong> when you finish.</p></aside>
+<h4 id="s6-profile">Guest profile</h4>
+<p>Open a guest to see <strong>Contact</strong>, <strong>Record</strong>, <strong>Private guest details</strong>, <strong>Companions</strong>, <strong>Follow-ups</strong> and a <strong>Timeline</strong>.</p>
+<table>
+  <thead><tr><th>Button</th><th>What it does</th><th>Badge</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Edit profile</strong> then <strong>Save</strong></td><td>Changes only the fields you touched. A <strong>Reason for change</strong> of 3 letters or more is required.</td><td>Saved in history, no Undo toast</td></tr>
+    <tr><td><strong>New follow-up</strong> / <strong>Add</strong></td><td>Opens a sheet: Title, Purpose, Priority, Due, Detail. Save it.</td><td><span class="badge undo">Can undo</span></td></tr>
+    <tr><td><strong>Reveal private details</strong></td><td>Shows the address, ID type and ID number on screen.</td><td>Hide it again after</td></tr>
+    <tr><td><strong>View ID photo</strong></td><td>Opens the photo for 5 minutes in a new tab.</td><td>Personal data</td></tr>
+    <tr><td><strong>Add companion</strong> then <strong>Save</strong></td><td>Adds a second guest with an optional ID photo.</td><td>No Undo toast</td></tr>
+    <tr><td><strong>Remove</strong> on a companion</td><td>Asks for a reason, then <strong>Confirm removal</strong> removes them or <strong>Keep companion</strong> cancels.</td><td>No Undo toast</td></tr>
+    <tr><td><strong>Show ID number</strong> / <strong>Hide private details</strong></td><td>The ID number is masked until you tap <strong>Show ID number</strong>. <strong>Hide private details</strong> covers phone, address and ID again, for example before you share your screen.</td><td>View only</td></tr>
+    <tr><td><strong>Open Messenger conversation</strong></td><td>On the Contact card. Opens the guest's Messenger chat in a new tab.</td><td>View only</td></tr>
+    <tr><td><strong>Merge</strong> (Identity review)</td><td>Joins two records of the same person. The other record becomes inactive. Needs a shared phone or e-mail and a reason.</td><td><span class="badge danger">Cannot be undone</span></td></tr>
+  </tbody>
+</table>
+<aside class="callout warn"><p>ID numbers and photos are private. Do not copy them into chats or notes.</p></aside>
+
+<h3 id="s6-cleaning-log">Operations: Cleaning log</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span> Every cleaning report the cleaners sent from the Cleaner app. Read only. Tap the <strong>Cleaned</strong> date to open a report.</p>
+<figure class="annotated">
+  <img src="img/dashboard/cleaning-log.webp" alt="The Cleaning log table with one row per cleaning report and filters above">
+  <span class="hotspot" data-x="39" data-y="21" data-title="Filters" data-who="Everyone" data-undo="n/a">Search, Submission (Complete, Incomplete, With issues), From and To dates. Fees (Unpaid) is for the owner and Admin.</span>
+  <span class="hotspot" data-x="71" data-y="45" data-title="Submission and Checklist" data-who="Everyone" data-undo="n/a">Complete or incomplete, and the percent of checklist done.</span>
+  <span class="hotspot" data-x="90" data-y="45" data-title="Evidence" data-who="Everyone" data-undo="n/a">How many photos and meter photos came with the report.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Fee and Paid" data-who="Owner, Admin" data-undo="n/a">The cleaner fee and whether it was paid. Hidden from cleaners.</span>
+  <figcaption>The Cleaning log.</figcaption>
+</figure>
+
+<h3 id="s6-cleaning-report">Operations: Cleaning report</h3>
+<p>Open a report to see the <strong>States</strong>, <strong>Meters</strong>, <strong>Photos</strong>, <strong>Checklist</strong> and <strong>Verification evidence (advisory)</strong> cards. Tap a photo to see it full size in a new tab. Urgent notes show in red.</p>
+<figure class="annotated">
+  <img src="img/dashboard/cleaning-report.webp" alt="A cleaning report with meters, photos, checklist and a readiness decision box">
+  <span class="hotspot" data-x="34" data-y="80" data-title="Meters" data-who="Everyone" data-undo="n/a">Electric and water: before, after, difference and per night.</span>
+  <span class="hotspot" data-x="54" data-y="92" data-title="Meter flag and Review" data-who="Owner, Admin" data-undo="yes">Flags a wrong reading. It never edits the numbers.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Mark reviewed and Needs follow-up" data-who="Owner, Admin" data-undo="no">Records that you looked at the evidence.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Readiness decision" data-who="Owner, Admin" data-undo="no">Ready for arrival, Not ready, or Override. This sets the badge on Today.</span>
+  <figcaption>A cleaning report.</figcaption>
+</figure>
+<table>
+  <thead><tr><th>Control</th><th>Who</th><th>What it does</th><th>Badge</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Meter flag</strong> + reason + <strong>Review</strong></td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td><td>Marks a reading as first reading, re entry, misread, duplicate or under review. Flagged readings are left out of the utilities charts.</td><td><span class="badge undo">Can undo</span></td></tr>
+    <tr><td><strong>Mark reviewed</strong> / <strong>Needs follow-up</strong></td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td><td>Records your review of the photos and checks.</td><td>No Undo toast. Shown in history.</td></tr>
+    <tr><td><strong>Outcome</strong> + <strong>Record for</strong> a date</td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td><td>Sets Today&#39;s property readiness to ready or not ready.</td><td>No Undo toast. Shown in history.</td></tr>
+  </tbody>
+</table>
+<aside class="callout warn"><p><strong>Override: ready despite blockers</strong> passes over open work orders that block the next arrival. Use it only with a written reason.</p></aside>
+
+<h3 id="s6-workorders">Operations: Work orders</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> create and change. Everyone can read. A <span class="term" data-term="work-order">work order</span> is a maintenance job. One marked <strong>Blocks the next arrival</strong> holds the unit from being ready.</p>
+<ol class="steps">
+  <li>Tap <strong>New work order</strong>.</li>
+  <li>Fill <strong>Title</strong> (3 letters or more), <strong>Description</strong>, <strong>Priority</strong>, <strong>Status</strong> and <strong>Due</strong>.</li>
+  <li>Tick <strong>Blocks the next arrival</strong> if the next guest cannot stay until it is fixed.</li>
+  <li>Tap <strong>Save</strong>. <span class="badge undo">Can undo</span></li>
+</ol>
+<p>When you set the status to resolved, the <strong>Resolution (required)</strong> box appears. To remove one, open it, use the red <strong>Delete (cancel) this work order</strong> box with a reason. The list shows only open jobs unless you change <strong>Status</strong>. Urgent cleaner notes also arrive here as work orders. See <a href="#s8-telegram">Telegram: the two groups</a>.</p>
+
+<h3 id="s6-notices">Operations: Notices</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> create and change. A <span class="term" data-term="notice">notice</span> is a short warning with a type (power, water, maintenance, weather, general), an audience and an end time. Active ones show on Today.</p>
+<ol class="steps">
+  <li>Tap <strong>New notice</strong>.</li>
+  <li>Fill <strong>Title</strong>, <strong>Description</strong>, <strong>Type</strong>, <strong>Audience</strong>, <strong>Effective date</strong> and <strong>Expires</strong>.</li>
+  <li>Keep <strong>Active</strong> ticked. Tap <strong>Save</strong>. <span class="badge undo">Can undo</span></li>
+</ol>
+<p>A notice turns <strong>expired</strong> when its time passes or you untick <strong>Active</strong>. To remove one, use <strong>Delete (deactivate) this notice</strong> with a reason.</p>
+
+<h3 id="s6-stock">Inventory: Stock</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span> to look. Only the owner and Admin can receive or adjust stock. Shows what is on hand and what is running low.</p>
+<figure class="annotated">
+  <img src="img/dashboard/stock.webp" alt="The Inventory Stock page with three tables for consumables, appliances and stores">
+  <span class="hotspot" data-x="39" data-y="20" data-title="Print, Purchases, Counts" data-who="Print and Purchases: everyone. Counts: Owner, Admin" data-undo="n/a">Header buttons. Print opens the <strong>Print inventory</strong> sheet: tick Consumables, Appliances &amp; utensils or Stores (or <strong>Select all</strong>), then <strong>Print</strong> opens your browser print box.</span>
+  <span class="hotspot" data-x="56" data-y="27" data-title="Attention filter" data-who="Everyone" data-undo="n/a">Low stock, Out of stock, Inactive, Attention required.</span>
+  <span class="hotspot" data-x="37" data-y="53" data-title="Consumables table" data-who="Everyone" data-undo="n/a">On hand, Reorder below, Coverage in days and State. Tap a row to open the item.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Receive stock and Adjust" data-who="Owner, Admin" data-undo="yes">Two forms inside an item sheet. Both change real stock.</span>
+  <figcaption>Stock, with three tables.</figcaption>
+</figure>
+<h4 id="s6-receive-stock">Receive stock</h4>
+<ol class="steps">
+  <li>Tap the item to open its sheet.</li>
+  <li>In <strong>Receive stock</strong> fill <strong>Packs</strong>, <strong>Cost per pack (PHP)</strong>, <strong>Supplier</strong> and <strong>Date</strong>.</li>
+  <li>Tap <strong>Record receipt</strong> once.</li>
+  <li>Read <em>Received</em> and the number. Note: the expense is <strong>not</strong> posted to Finance. Record the expense there separately.</li>
+</ol>
+<h4 id="s6-adjust-stock">Adjust a wrong quantity</h4>
+<ol class="steps">
+  <li>Open the item. In <strong>Adjust (movement ledger only)</strong> type the <strong>Change (+/−)</strong> and a <strong>Reason</strong>.</li>
+  <li>Tap <strong>Record adjustment</strong>.</li>
+  <li>To take it back, tap <strong>Undo</strong> in the message within 8 seconds.</li>
+</ol>
+<p>If the button says <em>Needs a baseline count first</em>, do a count on the <a href="#s6-counts">Counts</a> page first. An empty movement history is not zero stock.</p>
+
+<h3 id="s6-purchases">Inventory: Purchases</h3>
+<p>The shopping list: propose, approve, receive. Then record the money in Finance.</p>
+<table>
+  <thead><tr><th>Button</th><th>Who</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Add</strong> (Propose an item)</td><td>Everyone sees the form</td><td>Puts an item on the list as proposed.</td></tr>
+    <tr><td><strong>Approve</strong>, <strong>Reject</strong>, <strong>Cancel</strong></td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td><td>Changes the status of a list line. <span class="badge undo">Can undo</span></td></tr>
+    <tr><td><strong>Receive</strong> then <strong>Record receipt</strong></td><td><span class="badge role">Owner</span> <span class="badge role">Admin</span></td><td>Adds the goods to stock and to <strong>Recorded purchases</strong>. Press once.</td></tr>
+  </tbody>
+</table>
+
+<h3 id="s6-counts">Inventory: Counts</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> A count sheet. Each row has <strong>Recorded</strong>, <strong>Counted</strong>, a live <strong>Variance</strong>, a <strong>Note</strong> (where you counted, 3 letters or more) and <strong>Confirm</strong>. Nothing is saved until you press <strong>Confirm</strong> on that row.</p>
+<aside class="callout warn"><p>Confirm sets the stock to your number. There is no Undo toast. Count carefully first. If you get it wrong, fix it with an <strong>Adjust</strong>.</p></aside>
+
+<h3 id="s6-finance-review">Finance: Review queue</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> Money waiting for a human decision. Everything here touches money.</p>
+<figure class="annotated">
+  <img src="img/dashboard/finance-review.webp" alt="The Finance review queue with transactions awaiting review and payment evidence comparisons">
+  <span class="hotspot" data-x="37" data-y="20" data-title="Transactions awaiting review" data-who="Owner, Admin" data-undo="no">Receipts and Airbnb candidates waiting. Each row has a Note box, Confirm and Void.</span>
+  <span class="hotspot" data-x="37" data-y="42" data-title="Payment evidence comparisons" data-who="Owner, Admin" data-undo="no">Guest payments compared with the expected amount. Each row has a Reason box, Approve and Reject.</span>
+  <figcaption>The review queue.</figcaption>
+</figure>
+<table>
+  <thead><tr><th>Button</th><th>What it does</th><th>Badge</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Approve</strong> (payment evidence)</td><td>Says the guest&#39;s payment is good. It lets you confirm the booking on Inquiries.</td><td><span class="badge danger">Posts money at once</span></td></tr>
+    <tr><td><strong>Reject</strong> (payment evidence)</td><td>Says the payment is not good. It lets you decline the booking.</td><td><span class="badge danger">Posts money at once</span></td></tr>
+    <tr><td><strong>Confirm</strong> (transaction)</td><td>Makes the receipt a confirmed entry in the money list.</td><td><span class="badge danger">Posts money at once</span></td></tr>
+    <tr><td><strong>Void</strong> (transaction)</td><td>Takes the row out of the totals.</td><td><span class="badge danger">Posts money at once</span></td></tr>
+  </tbody>
+</table>
+<aside class="callout danger"><p>None of these four buttons has an Undo. Check the amount against the bank or GCash app before you tap. Tap once.</p></aside>
+<p>The same payment can also be decided in Telegram. See <a href="#s7-booking-flow">A booking from start to finish</a>.</p>
+
+<!-- admin -->
+<h3 id="s6-health">Settings: System health</h3>
+<p><span class="badge role">Owner</span> <span class="badge role">Admin</span> <span class="badge role">Cleaner</span> Everyone can open this page. It reloads every minute and reports missing records as missing, not as healthy.</p>
+<figure class="annotated">
+  <img src="img/dashboard/health.webp" alt="The System health page with verification checks, verifier findings and job heartbeats">
+  <span class="hotspot" data-x="91" data-y="23" data-title="Run all checks" data-who="Everyone" data-undo="n/a">Runs the health checks now. Each row shows pass, warn or fail.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="System verifier findings" data-who="Everyone can read" data-undo="no">Open problems. Owner and Admin get Known, stop reminding.</span>
+  <span class="hotspot" data-x="" data-y="" data-title="Job heartbeats" data-who="Everyone" data-undo="n/a">Each background job: on time, N failures or stale.</span>
+  <figcaption>System health.</figcaption>
+</figure>
+<p>Sections: <strong>Verification checks</strong>, <strong>System verifier findings</strong>, <strong>Client errors</strong>, <strong>Job heartbeats</strong>, <strong>Calendar sync</strong>, <strong>Airbnb e-mail ingestion</strong> and <strong>Data integrity report</strong>. An empty findings list says <em>Nothing open.</em> The verifier runs every hour and again at 07:45.</p>
+<p><strong>Run all checks</strong> only reads and compares. <strong>Known, stop reminding</strong> stops the reminder for one finding until something about it changes.</p>
+<!-- /admin -->
+
+<h3 id="s6-cleaner-view">What a cleaner account sees</h3>
+<aside class="callout note"><p>The cleaner view looks like the owner screens above, with a shorter menu and no money columns.</p></aside>
+<ul>
+  <li><strong>Can open:</strong> Today, Bookings, Operations and Inventory.</li>
+  <li><strong>Cannot open:</strong> Guests, Finance and the other office pages.</li>
+  <li><strong>Cannot do:</strong> create work orders or notices, decide inquiries, receive or adjust stock, review cleaning evidence or readiness.</li>
+  <li>Money columns are hidden. But a cleaner can still read guest names and cleaning reports.</li>
+</ul>
+<!-- admin -->
+<aside class="callout tip"><p>A cleaner who taps <strong>Settings</strong> sees the grey card <em>Not available for your role.</em> That page is Staff. The one page a cleaner may use is <strong>System health</strong>. Open Settings, then choose <strong>System health</strong>.</p></aside>
+<!-- /admin -->
+
+<!-- admin -->
+<h3 id="s6-owner-pages">Pages for the owner and admins</h3>
+<p>These pages are for the owner and Admin. Each is one line here. Money pages are careful work.</p>
+<table>
+  <thead><tr><th>Page</th><th>In one line</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Finance &gt; Account book</strong></td><td>A cash-book list with money in, money out and a running balance. It can export a CSV.</td></tr>
+    <tr><td><strong>Finance &gt; Transactions</strong></td><td>The money list, with <strong>New transaction</strong>. <strong>Export CSV</strong> saves only the first 25 rows. Do not treat it as the full list.</td></tr>
+    <tr><td><strong>Finance &gt; Reconciliation</strong></td><td>Explains why the Airbnb reservation totals and payout e-mail totals differ.</td></tr>
+    <tr><td><strong>Finance &gt; Journals</strong></td><td>Proper accounting entries through plain forms. <strong>Prepare entry</strong>, then <strong>Review and post</strong>. Correct with <strong>Reverse</strong>.</td></tr>
+    <tr><td><strong>Finance &gt; Statements</strong></td><td>Profit and loss, balance sheet and more, from posted journals.</td></tr>
+    <tr><td><strong>Finance &gt; Accounting setup</strong></td><td>Opening balances and the month-end close. Tap <strong>Run depreciation</strong> and <strong>Post consumable usage</strong> once each and wait for the message.</td></tr>
+    <tr><td><strong>KPIs &amp; Analytics</strong></td><td>Occupancy, prices, income and utilities for a period. &quot;Not available&quot; means no data, not zero.</td></tr>
+    <tr><td><strong>Pricing</strong></td><td>The nightly rate, discounts and promotions. A change reaches the booking site and the concierge within a minute.</td></tr>
+    <tr><td><strong>Settings &gt; Staff</strong></td><td>Add a login, reset a PIN, switch a login off.</td></tr>
+    <tr><td><strong>Settings &gt; Audit history</strong></td><td>Everything changed, newest first, with Undo for the undoable rows.</td></tr>
+    <tr><td><strong>Settings &gt; Guest contact</strong></td><td>The name and mobile number the concierge and guest messages give to guests. A wrong number strands a guest, so ask before changing it.</td></tr>
+  </tbody>
+</table>
+<aside class="callout warn"><p>If you are not sure about a money page, do not press anything. Ask the owner. Reading is always safe.</p></aside>
+<!-- /admin -->
+
+<h3 id="s6-ready">Check yourself</h3>
+<ul class="checklist" id="s6-ready-list">
+  <li><label><input type="checkbox"> I can sign in and sign out.</label></li>
+  <li><label><input type="checkbox"> I can find a booking with Ctrl+K.</label></li>
+  <li><label><input type="checkbox"> I know which buttons have no Undo.</label></li>
+  <li><label><input type="checkbox"> I know I press a money button once and wait for the message.</label></li>
+  <li><label><input type="checkbox"> I can find the Cleaning log and open a report.</label></li>
+</ul>
+<p>Next: <a href="#s7-booking-flow">A booking from start to finish</a>.</p>
