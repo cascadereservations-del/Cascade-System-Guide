@@ -158,6 +158,7 @@ Admin chapters name systems, never credentials; for anything sensitive write "se
 - `img/manual/login.webp` `img/manual/dashboard.webp` `img/manual/cleaning.webp` `img/manual/sops.webp`
 - `img/cleaner/signin.webp` `img/cleaner/phase-0.webp` `img/cleaner/phase-1.webp` `img/cleaner/phase-2.webp` `img/cleaner/phase-3.webp` `img/cleaner/supply-log.webp` `img/cleaner/phase-4.webp` `img/cleaner/submit.webp`
 - `img/dashboard/signin.webp` `img/dashboard/today.webp` `img/dashboard/bookings.webp` `img/dashboard/calendar.webp` `img/dashboard/inquiries.webp` `img/dashboard/booking-detail.webp` `img/dashboard/guests.webp` `img/dashboard/cleaning-log.webp` `img/dashboard/cleaning-report.webp` `img/dashboard/stock.webp` `img/dashboard/finance-review.webp` `img/dashboard/pricing.webp` `img/dashboard/staff.webp` `img/dashboard/health.webp` `img/dashboard/cleaner-view.webp`
+- `img/standard/bed.webp` `img/standard/room.webp` `img/standard/living.webp` `img/standard/tv-wall.webp` `img/standard/remote-tray.webp` `img/standard/kitchen.webp` `img/standard/kitchen-shelf.webp` `img/standard/sink.webp` `img/standard/bathroom.webp` `img/standard/laundry.webp` `img/standard/entrance.webp`
 
 A missing image renders as a labelled placeholder, so reference freely from this list.
 
