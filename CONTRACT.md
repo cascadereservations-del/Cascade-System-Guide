@@ -148,6 +148,8 @@ Admin chapters name systems, never credentials; for anything sensitive write "se
 - Guest guide https://cascadereservations-del.github.io/Welcome-To-Cascades-/
 - Operations Manual https://cascadereservations-del.github.io/Cascade-Manual/
 - Cleaner app https://cascadereservations-del.github.io/CH-Cleaners-Checklist/
+
+- Cascade Staff app https://cascadereservations-del.github.io/Cascade-Staff/
 - Messenger https://m.me/cascade.hideaway
 (The admin dashboard is named, never linked.)
 

@@ -27,7 +27,7 @@ const NEVER = [
 ]
 const ALLOWED_EMAIL = /^(cascadereservations@gmail\.com|guest@example\.com)$/i
 const ALLOWED_PHONE = /0917 ?000 ?0000|991 ?853 ?8269/
-const ALLOWED_URL = /^https:\/\/(cascadereservations-del\.github\.io\/(Stay_At_CascadeGSC|Welcome-To-Cascades-|Cascade-Manual|CH-Cleaners-Checklist|Cascade-System-Guide)\/|m\.me\/cascade\.hideaway|fonts\.googleapis\.com|fonts\.gstatic\.com)/
+const ALLOWED_URL = /^https:\/\/(cascadereservations-del\.github\.io\/(Stay_At_CascadeGSC|Welcome-To-Cascades-|Cascade-Manual|CH-Cleaners-Checklist|Cascade-System-Guide|Cascade-Staff)\/|m\.me\/cascade\.hideaway|fonts\.googleapis\.com|fonts\.gstatic\.com)/
 const XMLNS = /^http:\/\/www\.w3\.org\//
 
 const CONTRACT = readFileSync(join(ROOT, 'CONTRACT.md'), 'utf8')
