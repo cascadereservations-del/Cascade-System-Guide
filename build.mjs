@@ -322,6 +322,8 @@ function build(kind) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${FONTS}">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon-180.png">
 <link rel="stylesheet" href="../assets/guide.css?v=${assetVer('guide.css')}">
 <script>
 document.documentElement.classList.add('js');
@@ -376,6 +378,8 @@ function lockPage(html, pass) {
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light dark">
 <title>Admin guide - Cascade Hideaway</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon-180.png">
 <link rel="stylesheet" href="../assets/guide.css?v=${assetVer('guide.css')}">
 </head>
 <body>
